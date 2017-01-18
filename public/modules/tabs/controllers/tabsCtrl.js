@@ -3,13 +3,13 @@ angular.module('tabsCtrl', ['tabsService'])
 	
 	self = this;
 
+
 	// Grab all the items from Tabs Service
 	Tabs.all()
-    .success(function(data) {
-        self.tabItems = data;
-    })
-    .error(function(data) {
-        // Error Handling
+    .then(function(data){
+        console.log(data);
+        self.tabItems = data.data; 
+    }, function(data){
+        console.log("Error occurred! " + data)
     });
-
 });

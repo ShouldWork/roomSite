@@ -5,12 +5,9 @@ angular.module('cardsCtrl', ['cardsService'])
 	
 	// Grab all the items from Cards Service
 	Cards.all()
-    .success(function(data) {
-        console.log(data);
-        self.cardItems = data;
-    })
-    .error(function(data) {
-        // Error Handling
-    });
-
+    .then(function(data){
+        self.cardItems = data.data;
+    },function(data){
+        console.log("An error occurred " + data);
+    }); 
 });
