@@ -10,7 +10,8 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/',
             templateUrl: 'home.html',
             params: {
-                title: "Material Starter"
+                title: "Material Starter",
+                content:"This is some regular stuff to talk about!"
             }
         })
         .state('cards', {
@@ -19,7 +20,8 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'cardsCtrl',
             controllerAs: 'Cards',
             params: {
-                title: "Cards"
+                title: "Peeps",
+                content: "This is to show different cards and layouts."
             }
         })
         .state('list', {
@@ -28,7 +30,8 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'listCtrl',
             controllerAs: 'List',
             params: {
-                title: "List"
+                title: "Objectives",
+                content: "More examples of different layouts."
             }
         })
         .state('tabs', {
@@ -37,7 +40,9 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'tabsCtrl',
             controllerAs: 'Tabs',
             params: {
-                title: "Tabs"
+                title: "Some extra stuff",
+                content: "Something super special"
+
             }
         });
 

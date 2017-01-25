@@ -17,8 +17,15 @@ md-toolbar.toolbar h1, md-toolbar.md-toolbar-tools h3, md-tabs md-tabs-wrapper m
     font-size: 20px;
 }
 md-tabs md-tabs-wrapper {
-    background: #2196F3;
+    background: rgba(38,49,69,.8);
 }
 .md-button {
     padding: 0 12px;
+}
+
+
+.background_material {
+    background-image: url('./temp-assets/card-materialup.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

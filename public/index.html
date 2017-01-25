@@ -10,12 +10,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+  <link rel="stylesheet" href="styles/styles.css"/>
   <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,700'>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/scripts/angular-material/angular-material.min.css"/>
-  <link rel="stylesheet" href="styles/styles.css"/>
 
 
 </head>
@@ -52,6 +52,8 @@
         <md-list-item layout="row" ng-click="app.toggleLeft()" href="/tabs">
             <span>Tabs</span>
         </md-list-item>
+        
+
 
     </md-sidenav>
 
@@ -65,7 +67,10 @@
             </md-button>
 
         </md-toolbar>
-
+        <md-list-item layout="row" ng-click="app.showSimpleToast()"> 
+            <span>Login</span>
+        </md-list-item> 
+        <md-divider></md-divider>
     </md-sidenav>
 
 <div style="width:100%" class="ng-cloak">
@@ -86,11 +91,12 @@
 
         <div layout="row" layout-align="center center" layout-wrap>
             <h1 flex="90" class="md-headline">{{ title }}</h1>
+            <h3 flex="80" class="sm-headline">{{ content }}</h3>
         </div>
 
     </md-toolbar>
 
-    <div ui-view></div>
+    <div ui-view style="background-image:url('../assets/background.jpg'); height: 100%"></div>
 
 </div>
 

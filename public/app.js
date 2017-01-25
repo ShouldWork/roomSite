@@ -12,6 +12,6 @@ var materialApp = angular
     'tabsService'
 ]).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
-    .accentPalette('pink');
+    .primaryPalette('amber')
+    .accentPalette('orange');
 });
