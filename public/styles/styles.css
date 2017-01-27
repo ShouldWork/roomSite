@@ -29,3 +29,7 @@ md-tabs md-tabs-wrapper {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.md-toast .md-toast-content span {
+    color: red;
+}

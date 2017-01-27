@@ -1,0 +1,20 @@
+<div class="row" layout-margin>
+	<h2>Create User</h2>
+	<form class="col s12">
+		<md-input-container layout="row">
+			<input ng-model="user.displayName" placeholder="User name" />
+		</md-input-container layout="row">
+		<md-input-container layout="row">
+			<input type="email" ng-model="user.emailAddress" placeholder="Email address" />
+		</md-input-container layout="row">
+		<md-input-container layout="row">
+			<input type="password" ng-model="user.loginPassword" placeholder="Password" />
+		</md-input-container>
+		<md-input-container layout="row">
+			<input type="password" ng-model="user.loginPasswordConfirm" placeholder="Confirm password" />
+		</md-input-container>
+	</form>
+	<md-button type="submit" class="default md-raised" ng-click="cancel()">Cancel</md-button>
+	<md-button class="md-primary md-raised" ng-click="create(user)">Create</md-button>
+</div>
+

@@ -44,6 +44,12 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 content: "Something super special"
 
             }
+        })
+        .state('login',{
+            url: '/login',
+            templateUrl: '/modules/login/view/login.view.html',
+            controller: 'loginController',
+            controllerAs: 'loginCtrl'
         });
 
     $locationProvider.html5Mode(true);

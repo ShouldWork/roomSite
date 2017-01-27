@@ -1,10 +1,11 @@
 angular.module('appCtrl', ['ngMaterial'])
-.controller('appCtrl', function($mdSidenav, $stateParams, $rootScope,$mdToast,$scope) {
-
-    self = this;
+.service('toastService', function($mdToast) {
 
 
-      var last = {
+    var self = this; 
+
+
+    var last = {
       bottom: true,
       top: false,
       left: true,
@@ -14,7 +15,6 @@ angular.module('appCtrl', ['ngMaterial'])
   self.toastPosition = angular.extend({},last);
 
   self.getToastPosition = function() {
-    console.log("getting position");
     sanitizePosition();
 
     return Object.keys(self.toastPosition)
@@ -33,22 +33,22 @@ angular.module('appCtrl', ['ngMaterial'])
     last = angular.extend({},current);
   }
 
-  self.showSimpleToast = function() {
-    console.log("Running simple toast function!")
+  self.showSimpleToast = function(message) {
+    console.log("Showing toast!");
     var pinTo = self.getToastPosition();
 
     $mdToast.show(
       $mdToast.simple()
-        .textContent('Simple Toast!')
+        .textContent(message)
         .position(pinTo )
         .hideDelay(3000)
     );
   };
 
-  self.showActionToast = function() {
+  self.showActionToast = function(message) {
     var pinTo = self.getToastPosition();
     var toast = $mdToast.simple()
-      .textContent('Marked as read')
+      .textContent(message)
       .action('UNDO')
       .highlightAction(true)
       .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
@@ -60,58 +60,22 @@ angular.module('appCtrl', ['ngMaterial'])
       }
     });
   };
+})
 
-    // var last = {
-    //     bottom: false,
-    //     top: true,
-    //     left: false,
-    //     right: true
-    // };
-
-    // self.toastPosition = angular.extend({},last);
-
-    // self.getToastPosition = function() {
-    //     sanitizePosition();
-
-    //     return object.keys(self.toastPosition)
-    //         .filter(function(pos){ return self.toastPostion(pos); })
-    //         .join(" ");
-    // };
-
-    // function sanitizePosition(){
-    //     var current = self.toastPosition; 
-
-    //     if ( current.bottom && last.top ) current.top = false;
-    //     if ( current.top && last.bottom ) current.bottom = false;
-    //     if ( current.right && last.left ) current.left = false;
-    //     if ( current.left && last.right ) current.right = false;
-
-    //     last = angular.extend({},current);
-    // }
-
-    // self.showToast = function() {
-    //     var pinTo = getToastPosition();
-
-    //     $mdToast.show(
-    //         $mdToast.simple()
-    //             .textContent('simple Toast!')
-    //             .position(pinTo)
-    //             .hideDelay(3000)
-    //         );
-    // };
-
-
-
+.controller('appCtrl', function($mdSidenav, $stateParams, $rootScope,$mdToast,$scope,toastService,$mdDialog) {
+    self= this; 
+    self.userLoggedIn = {}; 
+    var toast = toastService; 
+    // console.log(toastService.showSimpleToast());
     // Update title using rootscope
     self.updateTitle = function() {
         $rootScope.title = $stateParams.title;
         $rootScope.content = $stateParams.content;
     }
-
     // Run updateTitle on each state change
     $rootScope.$on('$stateChangeSuccess', self.updateTitle);
 
-	self.toggleLeft = function() {
+	  self.toggleLeft = function() {
     	$mdSidenav('left').toggle();
     }
 
@@ -121,7 +85,43 @@ angular.module('appCtrl', ['ngMaterial'])
 
 
     self.login = function(){
-        console.log('User is logging in');
-        self.showSimpleToast(); 
+        toast.showActionToast('User logging in!');
+        $mdSidenav('right').toggle();
     }
+
+    self.showLoginDialog = function(ev) {
+      $mdDialog.show({
+        controller: loginDialogController,
+        templateUrl: '/modules/login/view/login.view.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+      })
+      .then(function(answer) {
+        // console.log("user name: " + answer.displayName  + " email: " + answer.emailAddress + " password: " + answer.loginPassword);
+        $mdSidenav('right').toggle();
+        self.userLoggedIn = {
+          displayName: answer.displayName,
+          emailAddress: answer.emailAddress
+        }
+        toast.showSimpleToast('User is logged in ' + answer.displayName);
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+   function loginDialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+          $mdDialog.hide();
+        };
+
+        $scope.cancel = function() {
+          $mdDialog.cancel();
+        };
+
+        $scope.create = function(answer) {
+          $mdDialog.hide(answer);
+        };
+  }
 })
