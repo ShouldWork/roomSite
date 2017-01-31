@@ -3,17 +3,17 @@
 		{
 			"id":"1",
 			"title":"Payments",
-			"text": "A material metaphor is the unifying theory of a rationalized space and a system of motion. The material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic."
+			"text": "Track and update pending payments between roommates"
 		},
 		{
 			"id":"2",
 			"title":"Discussions",
-			"text": "Angular Material is both a UI Component framework and a reference implementation of Google's Material Design Specification. This project provides a set of reusable, well-tested, and accessible UI components based on Material Design."
+			"text": "Open forum for whatever you want to discuss."
 		},
 		{
 			"id":"3",
-			"title":"My stuff",
-			"text": "MaterialUp curates the best of Material Design inspiration, tools and freebies. Get your daily dose of Material design inspiration!"
+			"title":"Cleaning",
+			"text": "Track and update cleaning schedules such as dishes, vaccuuming, etc.." 
 		}
 	]
 }

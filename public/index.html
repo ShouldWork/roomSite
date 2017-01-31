@@ -32,23 +32,23 @@
         
         </md-toolbar>
 
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/">
+        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/home">
             <span>Home</span>
         </md-list-item>
         <md-divider></md-divider>
     
         <md-list-item layout="row" ng-click="app.toggleLeft()" href="/cards">
-            <span>Cards</span>
+            <span>Peeps</span>
         </md-list-item>
         <md-divider></md-divider>
     
         <md-list-item layout="row" ng-click="app.toggleLeft()" href="/list">
-            <span>List</span>
+            <span>Objectives</span>
         </md-list-item>
         <md-divider></md-divider>
     
         <md-list-item layout="row" ng-click="app.toggleLeft()" href="/tabs">
-            <span>Tabs</span>
+            <span>Duties</span>
         </md-list-item>
         
 
@@ -60,20 +60,29 @@
 
         <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
             <h3 class="md-toolbar-tools">User Menu</h3>
-            {{ app.userLoggedIn.displayName }}
+            
+            <div layout="column">
+              <!-- <span>{{userInfo.isLoggedIn}}</span>  -->
+              <user-loggedin></user-loggedin>
+            </div>  
             <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
             <!-- <h4>{{ app.userLoggedIn.displayName }}<h4> -->
 
         </md-toolbar>
-        <md-list-item layout="row" ng-click="app.showLoginDialog($event)"> 
+        <md-list-item ng-show="!userInfo.isLoggedIn" layout="row" ng-click="app.showLoginDialog($event)"> 
             <span>Login</a></span> 
         </md-list-item> 
+            
         <md-divider></md-divider>
+
+        <md-list-item ng-show="userInfo.isLoggedIn" layout="row" ng-click="app.logout()"> 
+            <span>Logout</a></span> 
+        </md-list-item> 
     </md-sidenav>
 
-<div style="width:100%" class="ng-cloak">
+<div style="width:100%; height: 50%" class="ng-cloak">
     <md-toolbar class="toolbar">
         <div layout="row" layout-align="center center" layout-wrap class="md-toolbar-tools">
 
@@ -82,8 +91,9 @@
             </md-button>
 
             <span flex></span>
-            
-            <h4>{{ app.userLoggedIn.displayName }}<h4>
+            <div>
+              <user-loggedin></user-loggedin>
+            </div>  
             <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="User Menu">
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
@@ -96,9 +106,7 @@
         </div>
 
     </md-toolbar>
-
-    <div ui-view style="background-image:url('../assets/background.jpg'); height: 100%"></div>
-
+    <div ui-view></div> 
 </div>
 
 <!-- CDNS for firebase -->
@@ -137,7 +145,12 @@
 <script src="modules/tabs/controllers/tabsCtrl.js"></script>
 <script src="modules/tabs/services/tabsService.js"></script>
 
+<script src="modules/home/controllers/homeCtrl.js"></script>
+<script src="modules/home/services/homeService.js"></script>
+
 <script src="modules/login/controllers/login.controller.js"></script>
+<script src="modules/login/services/loginService.js"></script>
+<script src="modules/login/directives/userDirective.js"></script>
 
 <script src="app.controller.js"></script>
 

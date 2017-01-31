@@ -25,11 +25,27 @@ md-tabs md-tabs-wrapper {
 
 
 .background_material {
-    background-image: url('./temp-assets/card-materialup.png');
+    background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .md-toast .md-toast-content span {
     color: red;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }

@@ -10,7 +10,9 @@ var materialApp = angular
     'listService',
     'tabsCtrl',
     'tabsService',
-    'loginController'
+    'homeCtrl',
+    'loginController',
+    'loginService'
 ]).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('amber')

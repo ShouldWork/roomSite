@@ -1,6 +1,5 @@
 'use strict';
-angular.module('loginController',[])
+angular.module('loginController',['loginService'])
 .controller('loginController',function() {
-	console.log('Controller loading for login controller!');
 });
- 
+

@@ -1,11 +1,10 @@
-'use strict'; 
-angular.module('cardsCtrl', ['cardsService'])
-.controller('cardsCtrl', function(Cards) {
+angular.module('homeCtrl', ['homeService'])
+.controller('homeCtrl', function(Pages) {
 	
 	self = this;
 	
 	// Grab all the items from Cards Service
-	Cards.all()
+	Pages.all()
     .then(function(data){
         self.cardItems = data.data;
     },function(data){

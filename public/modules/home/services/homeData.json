@@ -1,0 +1,22 @@
+{
+	"list":[
+		{
+			"id":"1",
+			"image":"https://placeimg.com/640/480/people",
+			"title":"Peeps",
+			"link":"/cards"
+		},
+		{
+			"id":"2",
+			"image":"https://placeimg.com/640/480/arch/grayscale",
+			"title":"Objectives",
+			"link":"/list"
+		},
+		{
+			"id":"3",
+			"image":"https://placeimg.com/640/480/nature",
+			"title":"Duties",
+			"link":"/tabs"
+		}
+	]
+}

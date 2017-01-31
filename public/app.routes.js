@@ -7,10 +7,12 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     // Inserting Page title as State Param
     $stateProvider
         .state('home', {
-            url: '/',
-            templateUrl: 'home.html',
+            url: '/home',
+            templateUrl: '/modules/home/views/home.html',
+            controller: 'homeCtrl',
+            controllerAs: 'Home',
             params: {
-                title: "Material Starter",
+                title: "RoomSite",
                 content:"This is some regular stuff to talk about!"
             }
         })
@@ -40,7 +42,7 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'tabsCtrl',
             controllerAs: 'Tabs',
             params: {
-                title: "Some extra stuff",
+                title: "Duties",
                 content: "Something super special"
 
             }
@@ -50,7 +52,13 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: '/modules/login/view/login.view.html',
             controller: 'loginController',
             controllerAs: 'loginCtrl'
-        });
+        })
+        .state('peeps',{
+            url: '/peeps:userId',
+            templateUrl: '/modules/user/view/userView.html',
+            controller: 'userController',
+            controllerAs: 'userCtrl'
+        })
 
     $locationProvider.html5Mode(true);
 

@@ -5,7 +5,7 @@ angular.module('cardsService', [])
 
 	// Replicate $http request returning JSON
 	cardsFactory.all = function() {
-
+		
 		return $http.get('./modules/cards/services/cards.json');
 
 	};

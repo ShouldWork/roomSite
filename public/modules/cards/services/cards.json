@@ -2,20 +2,20 @@
 	"list":[
 		{
 			"id":"1",
-			"image":"./temp-assets/card-material.png",
-			"title":"Material Design",
+			"image":"https://placeimg.com/325/350/people/sepia",
+			"title":"Kevin Newcomb",
 			"link":"http://material.google.com"
 		},
 		{
 			"id":"2",
-			"image":"./temp-assets/card-angular-material.png",
-			"title":"Angular Material",
+			"image":"https://placeimg.com/325/350/animals/grayscale",
+			"title":"Blake Locke",
 			"link":"http://material.angularjs.org"
 		},
 		{
 			"id":"3",
-			"image":"./temp-assets/card-materialup.png",
-			"title":"MaterialUp",
+			"image":"https://placeimg.com/325/350/people",
+			"title":"John Moore",
 			"link":"http://www.materialup.com"
 		}
 	]
