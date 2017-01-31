@@ -26,6 +26,16 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 content: "This is to show different cards and layouts."
             }
         })
+        .state('peeps',{
+            url:'/peeps',
+            templateUrl: '/modules/user/views/userView.html',
+            controller: 'userController',
+            controllerAs: 'usrCtrl',
+            params: {
+                title:'First param',
+                content:'Second param'
+            }
+        })
         .state('list', {
             url: '/list',
             templateUrl: '/modules/list/views/list.html',
@@ -57,15 +67,10 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 content:"This is some regular stuff to talk about!"
             }
         })
-        .state('peeps',{
-            url:'/peeps/:userID',
-            templateUrl: '/modules/user/views/userView.html',
-            controller: 'userController',
-            controllerAs: 'usrCtrl',
-            params: {
-                title:'First param',
-                content:'Second param'
-            }
+        .state('directive',{
+            url:'/directive',
+            templateUrl:'modules/directives/sampleDirective.html',
+            controller: 'directiveController'
         })
 
     $locationProvider.html5Mode(true);

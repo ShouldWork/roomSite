@@ -2,7 +2,7 @@
 	"list":[
 		{
 			"id":"0",
-			"image":"https://placeimg.com/324/406/people/sepia",
+			"image":"https://placeimg.com/640/480/people/grayscale",
 			"name":"Kevin Newcomb",
 			"contacts":{
 				"address": "163 east 1500 South",
@@ -19,7 +19,7 @@
 		},
 		{
 			"id":"1",
-			"image":"https://placeimg.com/324/406/animals/grayscale",
+			"image":"https://placeimg.com/640/480/arch/sepia",
 			"name":"Blake Locke",
 			"contacts":{
 				"address": "163 east 1500 South",
@@ -34,7 +34,7 @@
 		},
 		{
 			"id":"2",
-			"image":"https://placeimg.com/324/406/people",
+			"image":"https://placeimg.com/640/480/people",
 			"name":"John Moore",
 			"contacts":{
 				"address": "163 east 1500 South",

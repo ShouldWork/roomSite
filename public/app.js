@@ -15,7 +15,8 @@ var materialApp = angular
     'loginController',
     'loginService',
     'userData',
-    'ngRoute'
+    'ngRoute',
+    'directiveController'
 ]).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('amber')

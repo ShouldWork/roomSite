@@ -4,8 +4,6 @@ angular.module('userController',['userData'])
 	self = this;
 	console.log($stateParams.userID);
 	$scope.selectedUser = $stateParams.userId || 2;
-	console.log($stateParams.userID);
-	$scope.selectedUser = 1;
 	// Grab all the items from Users Service
 	UserInfo.all()
     .then(function(data){
@@ -14,8 +12,5 @@ angular.module('userController',['userData'])
     },function(data){
         console.log("Error occurred! " + data); 
     });
-
-
-
 });
 

@@ -140,5 +140,22 @@ angular.module('appCtrl', ['ngMaterial'])
   return {
     template: '<h3 style="display: inline">{{userInfo.displayName | limitTo:5 }}</h3><span ng-if="userInfo.displayName.length > 5" style="display: inline">...</span>'
   };  
-});
+})
+.directive("user", function() {
+    return {
+        restrict: 'E',
+        link: function(scope, element, attrs,controller) {
+            scope.username = attrs.username;
+            scope.avatar = attrs.avatar;
+            scope.reputation = attrs.reputation;
+        },
+        controller: ['$scope',function userDirectiveController($scope){
+          // console.log($scope);
+          var userInfo = $scope.usrCtrl; 
+          console.log(userInfo[0]);
+        }],
+        template: '<div>Username: {{username}}<img ng-src="{{avatar}}" /></div>'
+        // templateUrl: 'modules/users/view/usersView.html'
+    }
+})
 

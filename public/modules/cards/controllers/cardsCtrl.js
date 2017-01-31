@@ -11,4 +11,8 @@ angular.module('cardsCtrl', ['cardsService'])
     },function(data){
         console.log("An error occurred " + data);
     }); 
+
+    self.goto = function(where){
+    	// $location.path('/peeps');
+    }
 });
