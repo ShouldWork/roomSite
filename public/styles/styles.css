@@ -49,3 +49,7 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+
+.profileImg {
+    width: 100%;
+}

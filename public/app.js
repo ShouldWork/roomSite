@@ -7,12 +7,15 @@ var materialApp = angular
     'cardsCtrl',
     'cardsService',
     'listCtrl',
+    'userController',
     'listService',
     'tabsCtrl',
     'tabsService',
     'homeCtrl',
     'loginController',
-    'loginService'
+    'loginService',
+    'userData',
+    'ngRoute'
 ]).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('amber')

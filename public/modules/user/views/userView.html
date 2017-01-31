@@ -1,1 +1,19 @@
-<div style="height: 100px; width: 100px background-color: blue"></div> 
+<div layout="row" layout-sm="column" layout-xs="column">
+  <div flex>
+  	<div flex>
+  		<div layout-fill class="md-whiteframe-6dp">
+  			<img class="profileImg" ng-src="{{ usrCtrl.userInfo[selectedUser].image }}" />
+  		</div>
+  	</div>
+  </div>
+  <div flex>
+	<div flex layout="column" layout-padding layout-wrap>
+		<span>Selected User: {{selectedUser}} </span>
+		<h2>{{ usrCtrl.userInfo[selectedUser].name }}</h2>
+		<h4>{{ usrCtrl.userInfo[selectedUser].contacts.address}}</h4>
+		<h4>{{ usrCtrl.userInfo[selectedUser].contacts.city }}, {{usrCtrl.userInfo[selectedUser].contacts.state}}</h4>
+		<h6>{{ usrCtrl.userInfo[selectedUser].contacts.email }}</h6>
+		<h6>{{ usrCtrl.userInfo[selectedUser].contacts.phone_mobile }}</h6>
+	</div>
+  </div>
+</div>

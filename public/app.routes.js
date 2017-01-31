@@ -47,17 +47,25 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
             }
         })
-        .state('login',{
-            url: '/login',
-            templateUrl: '/modules/login/view/login.view.html',
-            controller: 'loginController',
-            controllerAs: 'loginCtrl'
+        .state('default',{
+            url:'/',
+            templateUrl: '/modules/home/views/home.html',
+            controller: 'homeCtrl',
+            controllerAs: 'Home',
+            params: {
+                title: "RoomSite",
+                content:"This is some regular stuff to talk about!"
+            }
         })
         .state('peeps',{
-            url: '/peeps:userId',
-            templateUrl: '/modules/user/view/userView.html',
+            url:'/peeps/:userID',
+            templateUrl: '/modules/user/views/userView.html',
             controller: 'userController',
-            controllerAs: 'userCtrl'
+            controllerAs: 'usrCtrl',
+            params: {
+                title:'First param',
+                content:'Second param'
+            }
         })
 
     $locationProvider.html5Mode(true);
