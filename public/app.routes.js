@@ -16,25 +16,26 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 content:"This is some regular stuff to talk about!"
             }
         })
-        .state('cards', {
-            url: '/cards',
-            templateUrl: '/modules/cards/views/cards.html',
-            controller: 'cardsCtrl',
-            controllerAs: 'Cards',
-            params: {
-                title: "Peeps",
-                content: "This is to show different cards and layouts."
-            }
+        .state('peeps', {
+            abstract: true,
+            url: '/peeps',
+            templateUrl: '/modules/users/usersDefault.html'
         })
-        .state('peeps',{
-            url:'/peeps',
-            templateUrl: '/modules/user/views/userView.html',
-            controller: 'userController',
-            controllerAs: 'usrCtrl',
-            params: {
-                title:'First param',
-                content:'Second param'
-            }
+        .state('peeps.details', {
+            url:'/userDetails',
+            templateUrl: '/modules/users/userDetail/views/userDetail.html',
+            controller: 'allUsersController',
+            controllerAs:'User'
+        })
+        .state('peeps.profile', {
+            url:'/userProfile',
+            templateUrl: '/modules/users/userProfile/views/userProfile.html'
+        })
+        .state('peeps.allUsers', {
+            url:'/allUsers',
+            templateUrl: '/modules/users/allUsers/views/allUsers.html',
+            controller: 'allUsersController',
+            controllerAs: "allUsers"
         })
         .state('list', {
             url: '/list',

@@ -16,7 +16,11 @@ var materialApp = angular
     'loginService',
     'userData',
     'ngRoute',
-    'directiveController'
+    'directiveController',
+    'userInfoWidget',
+    'toastService',
+    'allUsersController',
+    'allUsersService'
 ]).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('amber')

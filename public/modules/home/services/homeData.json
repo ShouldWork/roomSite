@@ -4,7 +4,7 @@
 			"id":"1",
 			"image":"https://placeimg.com/640/480/people",
 			"title":"Peeps",
-			"link":"/cards"
+			"link":"peeps.allUsers"
 		},
 		{
 			"id":"2",

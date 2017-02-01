@@ -37,7 +37,7 @@
         </md-list-item>
         <md-divider></md-divider>
     
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/cards">
+        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/peeps">
             <span>Peeps</span>
         </md-list-item>
         <md-divider></md-divider>
@@ -161,7 +161,13 @@
 
 <script src="modules\directives\userProfileDirective.js" ></script>
 
+
+
+<script src="modules/users/allUsers/controllers/allUsersController.js"></script> 
+<script src="modules\users\allUsers\services\allUsersService.js"></script> 
+
 <script src="app.controller.js"></script>
+<script src="toast.service.js"></script>
 
 <script src="app.js"></script>
 <script src="app.routes.js"></script>
