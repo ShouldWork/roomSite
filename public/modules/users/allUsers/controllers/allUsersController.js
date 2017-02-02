@@ -1,20 +1,28 @@
 'use strict'; 
-angular.module('allUsersController', ['allUsersService'])
-.controller('allUsersController', function(Users) {
+angular.module('allUsersController', ['allUsersService','ngMaterial'])
+.controller('allUsersController', function(Users, $location,$scope,$state,$stateParams,$routeParams,$mdDialog) {
     
     self = this;
     
+
+    var originatorEv; 
+
     // Grab all the items from Cards Service
     Users.all()
     .then(function(data){
         self.userData = data.data;
-        console.log(data)
+        // console.log(data)
     },function(data){
         console.log("An error occurred " + data);
     }); 
 
     self.goto = function(where){
-        self.selectedUser = where; 
-        $location.path('/peeps/userDetail');
+        $state.go('peeps.details',{userId: where});
     }
+
+    self.openMenu = function($mdMenu, ev) {
+        console.log("Menu button clicked " + ev); 
+        originatorEv = ev; 
+        $mdMenu.open(ev);
+    };
 });

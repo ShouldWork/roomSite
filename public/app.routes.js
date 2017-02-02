@@ -22,9 +22,9 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: '/modules/users/usersDefault.html'
         })
         .state('peeps.details', {
-            url:'/userDetails',
+            url:'/userDetails/:userId',
             templateUrl: '/modules/users/userDetail/views/userDetail.html',
-            controller: 'allUsersController',
+            controller: 'userController',
             controllerAs:'User'
         })
         .state('peeps.profile', {
@@ -35,7 +35,10 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url:'/allUsers',
             templateUrl: '/modules/users/allUsers/views/allUsers.html',
             controller: 'allUsersController',
-            controllerAs: "allUsers"
+            controllerAs: "allUsers",
+            params: {
+                title: 'All da\' peeps' 
+            }
         })
         .state('list', {
             url: '/list',

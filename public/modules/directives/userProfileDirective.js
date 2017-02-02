@@ -9,6 +9,6 @@ angular.module('userDirective',[])
             scope.avatar = attrs.avatar;
             scope.reputation = attrs.reputation;
         },
-        template: '<img ng-src="{{avatar}}" />'
+        template: '<img ng-src="{{avatar}}" /><span>UserName: {{username}}</span>'
     }
 })

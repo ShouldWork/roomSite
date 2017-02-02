@@ -1,14 +1,12 @@
 'use strict';
 angular.module('userController',['userData'])
-.controller('userController',function(UserInfo, $scope,$route,$stateParams,$rootScope) {
+.controller('userController',function(UserInfo, $scope,$route,$stateParams,$rootScope,$routeParams) {
 	self = this;
-	console.log($stateParams.userID);
-	$scope.selectedUser = $stateParams.userId || 2;
-	// Grab all the items from Users Service
-	UserInfo.all()
+    var selectedUser = $stateParams.userId; 
+    // Grab all the items from Users Service
+    UserInfo.all()
     .then(function(data){
-        self.userInfo = data.data.list;
-        console.log(self.userInfo[0].name)
+        self.userInfo = data.data.list[selectedUser];
     },function(data){
         console.log("Error occurred! " + data); 
     });

@@ -53,3 +53,22 @@ a:active {
 .profileImg {
     width: 100%;
 }
+
+.cardTitle {
+    color: ghostWhite;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    border-bottom-right-radius: 10px;
+}
+
+.cardTitleContainer {
+    position: relative;
+    top: -3em;
+    text-align: end;
+    cursor: 
+    pointer;
+}
+
+.cardIcon_more {
+    position: absolute; right: 0; background-color: rgba(0,0,0,0.5)
+}

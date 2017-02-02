@@ -21,8 +21,11 @@ var materialApp = angular
     'toastService',
     'allUsersController',
     'allUsersService'
-]).config(function($mdThemingProvider) {
+]).config(function($mdThemingProvider, $mdIconProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('amber')
     .accentPalette('orange');
+   $mdIconProvider
+    .iconSet("dark", 'img/more_dark.svg')
+    .iconSet("light", 'img/more.svg')
 });
