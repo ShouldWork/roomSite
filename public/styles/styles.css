@@ -84,19 +84,17 @@ a:active {
 
 .trans_in {
   width: 100%;
-  transition: all 1s ease-in;
+  transition: all 1s linear;
 }
 .trans_in.ng-enter,
 .trans_in.ng-leave-active {
   opacity: 0;
-/*  transform: scale(0.2);
-  transform: rotate(20deg);*/
+  filter: saturate(0%);
 }
 .trans_in.ng-enter-active,
 .trans_in.ng-leave {
   opacity: 1;
- /* transition: rotate(0deg);
-  transform: scale(1);*/
+  filter: saturate(100%);
 }
 
 .details_list {
@@ -120,6 +118,7 @@ a:active {
     font-size: 3em;
     margin: 1em;
     text-shadow: black 1px 2px 5px;
+    z-index: 1;
 }
 
 .overlay_container {
@@ -130,10 +129,16 @@ a:active {
 }
 
 .overlay {
-    background: linear-gradient(90deg,rgba(0,0,0,0.6),transparent);
     position: absolute;
+    background: linear-gradient(90deg,rgba(0,0,0,0.6),transparent);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 0;
+}
+
+.img_affect {
+    filter: grayscale(55%) hue-rotate(33deg) ;
+    /*filter: blur(3px);*/
 }
