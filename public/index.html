@@ -37,7 +37,7 @@
         </md-list-item>
         <md-divider></md-divider>
     
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/peeps">
+        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
             <span>Peeps</span>
         </md-list-item>
         <md-divider></md-divider>
@@ -63,7 +63,7 @@
             
             <div layout="column">
               <!-- <span>{{userInfo.isLoggedIn}}</span>  -->
-              <user-loggedin></user-loggedin>
+              <user-loggedin short="true" limit="5" user="userInfo.displayName"></user-loggedin>
             </div>  
             <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
@@ -92,7 +92,7 @@
 
             <span flex></span>
             <div>
-              <user-loggedin></user-loggedin>
+              <user-loggedin limit="50" short="false" user="userInfo.displayName"></user-loggedin>
             </div>  
             <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="User Menu">
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
@@ -150,7 +150,6 @@
 <script src="modules/home/services/homeService.js"></script>
 <!-- <script src="userController.js"></script> -->
 <script src="modules/user/controllers/userController.js"></script>
-<script src="modules/user/services/userData.js"></script>
 
 <script src="modules/login/controllers/login.controller.js"></script>
 <script src="modules/login/services/loginService.js"></script>
@@ -164,6 +163,7 @@
 
 
 <script src="modules/users/allUsers/controllers/allUsersController.js"></script> 
+<script src="modules\users\userDetail\services\userData.js"></script>
 <script src="modules\users\allUsers\services\allUsersService.js"></script> 
 <script src="modules\users\userDetail\controllers\userDetailController.js"></script> 
 

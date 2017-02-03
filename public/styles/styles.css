@@ -72,3 +72,30 @@ a:active {
 .cardIcon_more {
     position: absolute; right: 0; background-color: rgba(0,0,0,0.5)
 }
+
+
+
+.trans_in {
+  width: 100%;
+  transition: all 1.5s ease-in;
+}
+.trans_in.ng-enter,
+.trans_in.ng-leave-active {
+  opacity: 0;
+/*  transform: scale(0.2);
+  transform: rotate(20deg);*/
+}
+.trans_in.ng-enter-active,
+.trans_in.ng-leave {
+  opacity: 1;
+ /* transition: rotate(0deg);
+  transform: scale(1);*/
+}
+
+.details_list {
+    background-color: orange; 
+    border-bottom: 2px solid black;
+    font-size: 1.25em;
+    color: black; 
+    padding: 10px;
+}

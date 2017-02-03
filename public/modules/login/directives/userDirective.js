@@ -13,6 +13,12 @@ angular.module('userInfoWidget', [])
 })
 .directive('userLoggedin', function() {
   return {
-    template: '<h3 style="display: inline">{{userInfo.displayName | limitTo:5 }}</h3><span ng-if="userInfo.displayName.length > 5" style="display: inline">...</span>'
+    restrict: 'EA',
+    scope: {
+        limit: '=limit',
+        short: '=short',
+        user: '=user'
+    },
+    template: '<h3 style="display: inline">{{user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
   };  
 });

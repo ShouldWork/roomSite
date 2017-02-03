@@ -1,20 +1,26 @@
 <!-- <h1>User Detail page</h1> -->
 
-<div layout="row" layout-sm="column" layout-xs="column" layout-padding>
-  <div flex>
+<div layout="row" layout-sm="column" layout-xs="column">
+  <div flex style="position: relative">
   	<div flex style="text-alignment: start">
-      <div layout-fill class="md-whiteframe-4dp">
         <img class="profileImg" ng-src="{{ User.userInfo.image }}" />
-      </div>
-  		<span style="background-color: orange; position: relative; top: -3em; padding: 5px; text-shadow: 0px 0px 1px ghostWhite; color: black" >{{ User.userInfo.name }}</span>
-  	</div>
+  		  <span style="border-bottom-right-radius: 10px; font-size: 2em; background-color: orange; position: absolute; bottom: 1em; right: -.75em; padding: 5px; text-shadow: 0px 0px 1px ghostWhite; color: black" >{{ User.userInfo.name }}</span>
+    </div>
   </div>
   <div flex>
-	<div flex layout="column" layout-padding layout-wrap>
-		<p>{{ User.userInfo.contacts.address}}</p>
-		<p>{{ User.userInfo.contacts.city }}, {{User.userInfo.contacts.state}}</p>
-		<p>{{ User.userInfo.contacts.email }}</p>
-		<p>{{ User.userInfo.contacts.phone_mobile }}</p>
-	</div>
+  	<div flex layout="column" layout-wrap ng-repeat="contact in User">
+      <span class="details_list">{{ contact.contacts.address }} {{ contact.contacts.city }}, {{ contact.contacts.state }}</span>
+      <span class="details_list">{{ contact.contacts.phone_mobile }}</span>
+      <span class="details_list">{{ contact.contacts.email }}</span>
+      <div  class="details_list" layout-padding ng-repeat="(key, app) in contact.linked_apps">
+        <!-- <span>app: {{app}}</span> -->
+        <a href="{{ app.url }}">
+          <span layout-padding>
+            <md-icon md-svg-icon="{{ key }}"></md-icon>
+            {{app.name}}
+          </span>
+        </a>
+      </div>
+  	</div>
   </div>
 </div>

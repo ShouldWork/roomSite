@@ -26,6 +26,11 @@ var materialApp = angular
     .primaryPalette('amber')
     .accentPalette('orange');
    $mdIconProvider
-    .iconSet("dark", 'img/more_dark.svg')
-    .iconSet("light", 'img/more.svg')
+    .icon("dark", 'img/more_dark.svg')
+    .icon("light", 'img/more.svg')
+    .icon("twitter", 'img/twitter.svg')
+    .icon("facebook", 'img/facebook.svg')
+    .icon("linkedin", 'img/linkedin.svg')
+    .icon("snapchat", 'img/snapchat.svg')
+    .icon("avatar", 'img/avatar.svg');
 });
