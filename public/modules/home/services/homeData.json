@@ -2,21 +2,21 @@
 	"list":[
 		{
 			"id":"1",
-			"image":"https://placeimg.com/640/480/people",
+			"image":"https://placeimg.com/940/620/people",
 			"title":"Peeps",
 			"link":"peeps.allUsers"
 		},
 		{
 			"id":"2",
-			"image":"https://placeimg.com/640/480/arch/grayscale",
+			"image":"https://placeimg.com/940/620/arch/grayscale",
 			"title":"Objectives",
-			"link":"/list"
+			"link":"list"
 		},
 		{
 			"id":"3",
-			"image":"https://placeimg.com/640/480/nature",
-			"title":"Duties",
-			"link":"/tabs"
+			"image":"https://placeimg.com/1000/620/tech",
+			"title":"Discussions",
+			"link":"tabs"
 		}
 	]
 }

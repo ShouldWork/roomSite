@@ -56,8 +56,8 @@ a:active {
 
 .cardTitle {
     color: ghostWhite;
-    background-color: rgba(0,0,0,0.5);
-    padding: 5px;
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px 15px;
     border-bottom-right-radius: 10px;
 }
 
@@ -70,14 +70,21 @@ a:active {
 }
 
 .cardIcon_more {
-    position: absolute; right: 0; background-color: rgba(0,0,0,0.5)
+    position: absolute;
+    bottom: 1em;
+    background-color: transparent;
+    left: 0em;
+    z-index: 100;
+    font-size: 1.5em;
+    text-shadow: black 1px 2px 5px;
+    font-weight: 600;
 }
 
 
 
 .trans_in {
   width: 100%;
-  transition: all 1.5s ease-in;
+  transition: all 1s ease-in;
 }
 .trans_in.ng-enter,
 .trans_in.ng-leave-active {
@@ -98,4 +105,35 @@ a:active {
     font-size: 1.25em;
     color: black; 
     padding: 10px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.overlay_title {
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(0,0,0,.5));
+    background: transparent;
+    color: white;
+    font-size: 3em;
+    margin: 1em;
+    text-shadow: black 1px 2px 5px;
+}
+
+.overlay_container {
+    overflow: hidden;
+    position: relative;
+    /*background: gray url('https://placeimg.com/640/800/tech/grayscale') no-repeat fixed center;*/
+    /*background: black;*/
+}
+
+.overlay {
+    background: linear-gradient(90deg,rgba(0,0,0,0.6),transparent);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

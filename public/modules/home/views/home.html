@@ -1,20 +1,5 @@
 <!-- <div class="padding-inner">
 
-	<h3 class="md-title">Room Site</h3>
-	<p>A dashboard to consolidate all things related to roommate shit</p>
-
-<div layout="row" layout-wrap>
-
-	<md-button flex-xs="100" class="md-raised md-primary" href="/cards">Peeps</md-button>
-	<md-button flex-xs="100" class="md-raised md-primary" href="/list">Objectives</md-button>
-	<md-button flex-xs="100" class="md-raised md-primary" href="/tabs">Duties</md-button>
-
-</div>
-
-</div> -->
-
-<div class="padding-inner">
-
   <div layout="row" layout-wrap layout-align="start center">
     <div flex="33" flex-sm="50" flex-xs="100" class="trans_in" ng-repeat="cardItem in Home.cardItems.list">
       <a ui-sref="{{cardItem.link}}">
@@ -24,9 +9,6 @@
             <md-card-title-text>
               <span class="md-title">{{ cardItem.title }}</span>
             </md-card-title-text>
-<!--             <md-button class="md-icon-button" href="{{ cardItem.link }}" aria-label="Close User Menu">
-              <md-icon md-font-icon="fa-external-link" class="md-menu-text-color fa s24"></md-icon>
-            </md-button> -->
           </md-card-title>
         </md-card>
     </a>
@@ -34,3 +16,15 @@
   </div>
 
 </div>
+ -->
+
+ <div layout="row" layout-xs="column">
+    <div flex ng-repeat="page in Home.cardItems.list">
+      <a ui-sref="{{ page.link }}">
+          <div flex class="overlay_container">
+              <span class="overlay_title">{{page.title}}</span>
+              <img ng-src="{{ page.image }}" />
+          </div>
+      </a>
+    </div>
+ </div>

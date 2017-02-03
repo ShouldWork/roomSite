@@ -37,7 +37,7 @@ angular.module('appCtrl', ['ngMaterial'])
         };
       }
 
-      self.showLoginDialog = function(ev) {
+      self.showCreateUserDialog = function(ev) {
           $mdDialog.show({
             controller: loginDialogController,
             templateUrl: '/modules/login/view/login.view.html',

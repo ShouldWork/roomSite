@@ -4,8 +4,6 @@ var materialApp = angular
     'ui.router',
     'ngMaterial',
     'appCtrl',
-    'cardsCtrl',
-    'cardsService',
     'listCtrl',
     'userController',
     'listService',
@@ -16,15 +14,14 @@ var materialApp = angular
     'loginService',
     'userData',
     'ngRoute',
-    'directiveController',
     'userInfoWidget',
     'toastService',
     'allUsersController',
     'allUsersService'
 ]).config(function($mdThemingProvider, $mdIconProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('amber')
-    .accentPalette('orange');
+    .primaryPalette('grey')
+    .accentPalette('light-green');
    $mdIconProvider
     .icon("dark", 'img/more_dark.svg')
     .icon("light", 'img/more.svg')
@@ -32,5 +29,6 @@ var materialApp = angular
     .icon("facebook", 'img/facebook.svg')
     .icon("linkedin", 'img/linkedin.svg')
     .icon("snapchat", 'img/snapchat.svg')
-    .icon("avatar", 'img/avatar.svg');
+    .icon("avatar", 'img/avatar.svg')
+    .icon("contact", 'img/contact.svg');
 });
