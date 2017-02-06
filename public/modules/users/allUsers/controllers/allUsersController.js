@@ -21,7 +21,7 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
     }
 
     self.openMenu = function($mdMenu, ev) {
-        console.log("Menu button clicked " + ev); 
+        // console.log($mdMenu); 
         originatorEv = ev; 
         $mdMenu.open(ev);
     };

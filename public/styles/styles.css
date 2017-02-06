@@ -71,10 +71,10 @@ a:active {
 
 .cardIcon_more {
     position: absolute;
-    bottom: 1em;
+    top:0;
     background-color: transparent;
-    left: 0em;
-    z-index: 100;
+    right: 0em;
+    /*z-index: 100;*/
     font-size: 1.5em;
     text-shadow: black 1px 2px 5px;
     font-weight: 600;
@@ -141,4 +141,49 @@ a:active {
 .img_affect {
     filter: grayscale(55%) hue-rotate(33deg) ;
     /*filter: blur(3px);*/
+}
+
+
+.social-icons {
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: #448aaf;
+}
+.social-icons h1 {
+  margin: 40px 0;
+}
+.social-icons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.social-icons ul li {
+  display: inline-block;
+  zoom: 1;
+  /**display: inline;*/
+  vertical-align: middle;
+}
+.social-icons ul li a {
+  display: block;
+  font-size: 1.4em;
+  margin: 0 5px;
+  text-decoration: none;
+}
+.social-icons ul li a i {
+  color: #448aaf;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.social-icons ul li a:hover i {
+  color: #275066;
+}
+.social-icons ul li a:focus i,
+.social-icons ul li a:active i {
+  transition: none;
+  color: #0b161c;
 }

@@ -19,6 +19,6 @@ angular.module('userInfoWidget', [])
         short: '=short',
         user: '=user'
     },
-    template: '<h3 style="display: inline">{{user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
+    template: '<h3 style="color: ghostWhite; display: inline">{{user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
   };  
 });

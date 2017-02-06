@@ -2,7 +2,7 @@
 	"list":[
 		{
 			"id":"0",
-			"image":"https://placeimg.com/640/480/animal",
+			"image":"https://scontent.xx.fbcdn.net/v/t1.0-9/1903979_1014954678518172_5889465613005079788_n.jpg?oh=4817f66695703a3ddbdb389fa120bf98&oe=594B7E1C",
 			"name":"Kevin Newcomb",
 			"contacts":{
 				"address": "163 east 1500 South",
@@ -13,14 +13,14 @@
 			},
 			"linked_apps":
 				{
-					"facebook":{ "url": "www.faceBook.com/newcomB", "name": "faceBook" },
+					"facebook":{ "url": "https://www.facebook.com/kevin.newcomb.750", "name": "faceBook" },
 					"twitter": {"url": "www.twitter.com/newCombTweeter", "name": "twiiter"},
 					"linkedin":{ "url": "www.linkedin.com/newComb", "name": "LinkedIn"}
 				}
 		},
 		{
 			"id":"1",
-			"image":"https://placeimg.com/640/480/arch",
+			"image":"https://scontent.xx.fbcdn.net/v/t1.0-9/12122910_10206157360628007_5147926811464526208_n.jpg?oh=fa83dae8c16cc0e71a914018287cccf1&oe=594BC3DC",
 			"name":"Blake Locke",
 			"contacts":{
 				"address": "163 east 1500 South",
@@ -31,13 +31,13 @@
 			},
 			"linked_apps":
 				{
-					"facebook": {"url": "www.facebook.com/blakelocke", "name": "faceBook" },
+					"facebook": {"url": "https://www.facebook.com/blake.locke.10", "name": "faceBook" },
 					"snapchat": { "url":  "www.snapchat.com/blakelocke", "name": "snapchat"}
 				}
 		},
 		{
 			"id":"2",
-			"image":"https://placeimg.com/640/480/nature",
+			"image":"https://scontent.xx.fbcdn.net/v/t1.0-9/12108182_10207613211944136_2852581576379220039_n.jpg?oh=c82d2057b882ee573ac0e5590be15cec&oe=59060E08",
 			"name":"John Moore",
 			"contacts":{
 				"address": "163 east 1500 South",
@@ -48,111 +48,7 @@
 			},
 			"linked_apps":
 				{
-					"facebook": { "url": "www.faceBook.com/johnmoore", "name": "faceBook" },
-					"linkedin": { "url": "www.linkedin.com/johnmoore", "name": "LinkedIn" }
-				}
-		},
-				{
-			"id":"3",
-			"image":"https://placeimg.com/640/480/tech",
-			"name":"Kevin Newcomb",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "Kevin@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook":{ "url": "www.faceBook.com/newcomB", "name": "faceBook" },
-					"twitter": {"url": "www.twitter.com/newCombTweeter", "name": "twiiter"},
-					"linkedin":{ "url": "www.linkedin.com/newComb", "name": "LinkedIn"}
-				}
-		},
-		{
-			"id":"4",
-			"image":"https://placeimg.com/640/480/people",
-			"name":"Blake Locke",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "Blake@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook": {"url": "www.facebook.com/blakelocke", "name": "faceBook" },
-					"snapchat": { "url":  "www.snapchat.com/blakelocke", "name": "snapchat"}
-				}
-		},
-		{
-			"id":"5",
-			"image":"https://placeimg.com/640/480/animal",
-			"name":"John Moore",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "John@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook": { "url": "www.faceBook.com/johnmoore", "name": "faceBook" },
-					"linkedin": { "url": "www.linkedin.com/johnmoore", "name": "LinkedIn" }
-				}
-		},
-				{
-			"id":"6",
-			"image":"https://placeimg.com/640/480/animal/grayscale",
-			"name":"Kevin Newcomb",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "Kevin@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook":{ "url": "www.faceBook.com/newcomB", "name": "faceBook" },
-					"twitter": {"url": "www.twitter.com/newCombTweeter", "name": "twiiter"},
-					"linkedin":{ "url": "www.linkedin.com/newComb", "name": "LinkedIn"}
-				}
-		},
-		{
-			"id":"7",
-			"image":"https://placeimg.com/640/480/arch/sepia",
-			"name":"Blake Locke",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "Blake@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook": {"url": "www.facebook.com/blakelocke", "name": "faceBook" },
-					"snapchat": { "url":  "www.snapchat.com/blakelocke", "name": "snapchat"}
-				}
-		},
-		{
-			"id":"8",
-			"image":"https://placeimg.com/640/480/people/grayscale",
-			"name":"John Moore",
-			"contacts":{
-				"address": "163 east 1500 South",
-				"city": "Orem",
-				"state": "UT",
-				"email": "John@email.com",
-				"phone_mobile": "(810) 555-1234" 
-			},
-			"linked_apps":
-				{
-					"facebook": { "url": "www.faceBook.com/johnmoore", "name": "faceBook" },
+					"facebook": { "url": "https://www.facebook.com/xxjohnnyirishxx", "name": "faceBook" },
 					"linkedin": { "url": "www.linkedin.com/johnmoore", "name": "LinkedIn" }
 				}
 		}

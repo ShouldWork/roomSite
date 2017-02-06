@@ -19,7 +19,21 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('peeps', {
             abstract: true,
             url: '/peeps',
-            templateUrl: '/modules/users/usersDefault.html'
+            templateUrl: '/modules/users/usersDefault.html',
+            resolve: {
+                checkLogin: function($q, toastService, loginService, $state, $timeout) {
+                    console.log(loginService);
+                    if (loginService.userInfo.isLoggedIn) {
+                        return $q.when()
+                    } else {
+                        $timeout(function(){
+                            toastService.showSimpleToast('You are not logged in!');
+                            $state.go('home')
+                        })
+                    return $q.reject(); 
+                    }
+                }
+            }
         })
         .state('peeps.details', {
             url:'/userDetails/:userId',
@@ -70,12 +84,7 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 title: "RoomSite",
                 content:"This is some regular stuff to talk about!"
             }
-        })
-        .state('directive',{
-            url:'/directive',
-            templateUrl:'modules/directives/sampleDirective.html',
-            controller: 'directiveController'
-        })
+        });
 
     $locationProvider.html5Mode(true);
 

@@ -1,5 +1,5 @@
 angular.module('appCtrl', ['ngMaterial'])
-.controller('appCtrl', function($mdSidenav, $stateParams, $rootScope,$mdToast,$scope,toastService,$mdDialog) {
+.controller('appCtrl', function($mdSidenav,$state, $stateParams, $rootScope,$mdToast,$scope,toastService,$mdDialog,loginService) {
       self= this; 
       self.isLoggedIn = {};
       self.userInfo = {
@@ -14,27 +14,25 @@ angular.module('appCtrl', ['ngMaterial'])
             // $rootScope.content = $stateParams.content;
       }
         // Run updateTitle on each state change
-      $rootScope.$on('$stateChangeSuccess', self.updateTitle);
+      $rootScope.$on('$stateChangeSuccess', self.updateTitle);      
 
-  	  self.toggleLeft = function() {
+    self.toggleLeft = function() {
         $mdSidenav('left').toggle();
-      }
+    }
 
-      self.toggleRight = function() {
+    self.toggleRight = function() {
         $mdSidenav('right').toggle();
-      }
-      $scope.userInfo = {
+    }
+    $scope.userInfo = {
         isLoggedIn: false
-      };
+    };
 
-      self.logout = function(){
+  self.logout = function(){
         toast.showSimpleToast('Logged out successfully!');
         $mdSidenav('right').toggle(); 
-        $scope.userInfo = {
-          displayName: '',
-          emailAddress: '',
-          isLoggedIn: false
-        };
+        loginService.userInfo = {}; 
+        $scope.userInfo = loginService.userInfo; 
+        $state.go('open'); 
       }
 
       self.showCreateUserDialog = function(ev) {
@@ -48,11 +46,14 @@ angular.module('appCtrl', ['ngMaterial'])
           })
           .then(function(answer) {
             // console.log("user name: " + answer.displayName  + " email: " + answer.emailAddress + " password: " + answer.loginPassword);
-            $scope.userInfo = {
+            loginService.userInfo = {
               isLoggedIn: true, 
               displayName: answer.displayName,
               emailAddress: answer.emailAddress
             }; 
+            $scope.userInfo = loginService.userInfo;
+
+            console.log(loginService);
             $mdSidenav('right').toggle();
             toast.showSimpleToast('User is logged in ' + $scope.userInfo.displayName);
             console.log($scope.userInfo.isLoggedIn)
@@ -77,5 +78,13 @@ angular.module('appCtrl', ['ngMaterial'])
             };
         };
 })
-
-
+.directive('animateOnLoad',['$animateCss', function($animateCss) {
+  return {
+    'link': function(scope, element) {
+      $animateCss(element, {
+          'event': 'enter',
+           structural: true
+      }).start();
+    }
+  };
+}]);

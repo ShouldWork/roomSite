@@ -1,10 +1,9 @@
 angular.module('loginService', [])
 .factory('loginService', function($http) {
-	var userFactory = {};
-
-	userFactory.all = function() {
-		return $http.get('./modules/login/services/user.json');
+	var user = {
+		userInfo: {
+			isLoggedIn: true
+		}
 	}
-
-	return userFactory; 
+	return user;
 });
