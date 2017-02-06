@@ -21,4 +21,11 @@ angular.module('userInfoWidget', [])
     },
     template: '<h3 style="display: inline">{{user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
   };  
+})
+.directive('sideMenuUser',function() {
+    return {
+        restrict: 'E',
+        templateUrl: "../sideMenu/user_login/login_sidemenu.html",
+        controller: 'loginController'
+    }
 });

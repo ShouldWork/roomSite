@@ -55,20 +55,18 @@
 
     </md-sidenav>
 
-
-    <md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
+    <side-menu-user></side-menu-user>
+<!--     <md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
 
         <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
-            <h3 class="md-toolbar-tools">User Menu</h3>
+            <h3 class="md-toolbar-tools">Profile</h3>
             
             <div layout="column">
-              <!-- <span>{{userInfo.isLoggedIn}}</span>  -->
               <user-loggedin short="true" limit="5" user="userInfo.displayName"></user-loggedin>
             </div>  
             <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
-            <!-- <h4>{{ app.userLoggedIn.displayName }}<h4> -->
 
         </md-toolbar>
         <md-list-item ng-show="!userInfo.isLoggedIn" layout="row" ng-click="app.showCreateUserDialog($event)"> 
@@ -80,7 +78,7 @@
         <md-list-item ng-show="userInfo.isLoggedIn" layout="row" ng-click="app.logout()"> 
             <span>Logout</a></span> 
         </md-list-item> 
-    </md-sidenav>
+    </md-sidenav> -->
 
 <div style="width:100%; background: linear-gradient(120deg,rgba(0,0,0,0.9),transparent); overflow: auto" class="ng-cloak">
     <md-toolbar class="toolbar">
@@ -89,7 +87,7 @@
             <md-button ng-click="app.toggleLeft()" class="md-icon-button" aria-label="Main Menu">
               <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
-
+            <div ui-sref="home"><span style="color: white; cursor: pointer">roomSite</span></div>
             <span flex></span>
             <div>
               <user-loggedin limit="50" short="false" user="userInfo.displayName"></user-loggedin>
@@ -149,6 +147,7 @@
 <script src="modules/login/controllers/login.controller.js"></script>
 <script src="modules/login/services/loginService.js"></script>
 <script src="modules/login/directives/userDirective.js"></script>
+
 
 
 <script src="modules/users/allUsers/controllers/allUsersController.js"></script> 

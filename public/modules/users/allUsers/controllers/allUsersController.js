@@ -20,9 +20,9 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
         $state.go('peeps.details',{userId: where});
     }
 
-    self.openMenu = function($mdMenu, ev) {
+    self.openMenu = function($mdOpenMenu, ev) {
         console.log("Menu button clicked " + ev); 
         originatorEv = ev; 
-        $mdMenu.open(ev);
+        $mdOpenMenu(ev);
     };
 });

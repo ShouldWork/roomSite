@@ -1,26 +1,57 @@
 <!-- <h1>User Detail page</h1> -->
-
-<div layout="row" layout-sm="column" layout-xs="column">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div layout="row" layout-sm="column" layout-xs="column" style="max-width: 100%">
   <div flex style="position: relative">
-  	<div flex style="text-alignment: start">
+    <md-button ng-click="User.goBack('peeps.allUsers')" class="md-fab md-mini" aria-label="back" style='position: absolute; border-radius: 100%; background: transparent'>
+      <md-icon md-svg-src="left-arrow-white"></md-icon>
+    </md-button>
+    <div flex style="text-alignment: start">
         <img class="profileImg" ng-src="{{ User.userInfo.image }}" />
   		  <span class="cardIcon_more cardTitle">{{ User.userInfo.name }}</span>
     </div>
   </div>
   <div flex>
-  	<div flex layout="column" layout-wrap ng-repeat="contact in User">
-      <span class="details_list">{{ contact.contacts.address }} {{ contact.contacts.city }}, {{ contact.contacts.state }}</span>
-      <span class="details_list">{{ contact.contacts.phone_mobile }}</span>
-      <span class="details_list">{{ contact.contacts.email }}</span>
-      <div  class="details_list" layout-padding ng-repeat="(key, app) in contact.linked_apps">
-        <!-- <span>app: {{app}}</span> -->
+  	<div flex layout="column" layout-wrap>
+<!--       <span class="details_list">{{ key }} {{ User.userInfo.contacts.address }} {{ User.userInfo.contacts.city }}, {{ User.userInfo.contacts.state }}</span>
+      <span class="details_list">{{ key }} {{ User.userInfo.contacts.phone_mobile }}</span>
+      <span class="details_list">{{ key }} {{ User.userInfo.contacts.email }}</span>
+      <div  class="details_list" layout-padding ng-repeat="(key, app) in User.userInfo.linked_apps">
         <a href="{{ app.url }}">
           <span layout-padding>
             <md-icon md-svg-icon="{{ key }}"></md-icon>
             {{app.name}}
           </span>
         </a>
-      </div>
-  	</div>
+      </div>  -->
+        <md-list flex>
+          <md-list-item style="float: left">
+            <md-icon md-svg-icon="phone"></md-icon>
+            <div class="md-list-item-text" class="md-offset">
+              <h3 style="color: ghostWhite">{{ User.userInfo.contacts.phone_mobile }} </h3>
+              <p style="color: ghostWhite"> Phone </p>
+            </div>
+            <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
+            </md-button>
+          </md-list-item>
+          <md-list-item style="float: left;">
+            <md-icon md-svg-icon="house-outline"></md-icon>
+            <div class="md-list-item-text" class="md-offset">
+              <h3 style="color: ghostWhite">{{ key }} {{ User.userInfo.contacts.address }} {{ User.userInfo.contacts.city }}, {{ User.userInfo.contacts.state }} </h3>
+              <p style="color: ghostWhite"> Home </p>
+            </div>
+            <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
+            </md-button>
+          </md-list-item>
+          <md-list-item ng-repeat="(key, app) in User.userInfo.linked_apps" style="float: left">
+            <md-icon md-svg-icon="{{ key }}"></md-icon>
+            <div class="md-list-item-text" class="md-offset">
+              <h3 style="color: ghostWhite"><md-truncate flex>{{ app.url }}</md-truncate></h3>
+              <p style="color: ghostWhite"> {{ app.name }}</p>
+            </div>
+            <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
+            </md-button>
+          </md-list-item>
+        </md-list>
+    </div>
   </div>
 </div>

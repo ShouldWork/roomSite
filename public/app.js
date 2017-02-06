@@ -30,5 +30,10 @@ var materialApp = angular
     .icon("linkedin", 'img/linkedin.svg')
     .icon("snapchat", 'img/snapchat.svg')
     .icon("avatar", 'img/avatar.svg')
-    .icon("contact", 'img/contact.svg');
+    .icon("contact", 'img/contact.svg')
+    .icon("back", 'img/back.svg')
+    .icon("left-arrow-black", 'img/left-arrow-black.svg')
+    .icon("left-arrow-white", 'img/left-arrow-white.svg')
+    .icon("phone", 'img/phone-call.svg')
+    .icon("house-outline", 'img/house-outline.svg');
 });
