@@ -19,6 +19,14 @@ angular.module('userInfoWidget', [])
         short: '=short',
         user: '=user'
     },
-    template: '<h3 style="color: ghostWhite; display: inline">{{user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
-  };  
+    template: '<h3 style="color: ghostWhite;display: inline">{{ user | limitTo: limit }}</h3><span style="color: ghostWhite; display: inline" ng-if="user.length > 5 && short">...</span>'
+  }
+})
+.directive('recentPosts', function() {
+    return {
+        restrict: 'E',
+        template:'<div ng-repeat="post in posts"><h1>{{post.name}}</h1><p>{{post.body}}</p></div>',
+        controller: 'recentPostsController',
+        controllerAs: 'posts'
+    }
 });

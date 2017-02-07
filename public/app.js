@@ -18,7 +18,8 @@ var materialApp = angular
     'toastService',
     'allUsersController',
     'allUsersService',
-    'ngAnimate'
+    'ngAnimate',
+    'recentPostsController'
 ]).config(function($mdThemingProvider, $mdIconProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('grey')

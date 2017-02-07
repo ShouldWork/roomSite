@@ -2,7 +2,7 @@
 angular.module('allUsersController', ['allUsersService','ngMaterial'])
 .controller('allUsersController', function(Users, $location,$scope,$state,$stateParams,$routeParams,$mdDialog) {
     
-    self = this;
+    var self = this;
     
 
     var originatorEv; 
@@ -18,11 +18,11 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
 
     self.goto = function(where){
         $state.go('peeps.details',{userId: where});
-    }
+    };
 
-    self.openMenu = function($mdMenu, ev) {
+    self.openMenu = function($mdOpenMenu, ev) {
         // console.log($mdMenu); 
         originatorEv = ev; 
-        $mdMenu.open(ev);
+        $mdOpenMenu(ev);
     };
 });

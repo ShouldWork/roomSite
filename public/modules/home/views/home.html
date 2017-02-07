@@ -1,30 +1,21 @@
-<!-- <div class="padding-inner">
-
-  <div layout="row" layout-wrap layout-align="start center">
-    <div flex="33" flex-sm="50" flex-xs="100" class="trans_in" ng-repeat="cardItem in Home.cardItems.list">
-      <a ui-sref="{{cardItem.link}}">
-        <md-card>
-          <img ng-src="{{cardItem.image}}" class="md-card-image" alt="">
-          <md-card-title layout="row" layout-align="space-between-center" layout-wrap>
-            <md-card-title-text>
-              <span class="md-title">{{ cardItem.title }}</span>
-            </md-card-title-text>
-          </md-card-title>
-        </md-card>
-    </a>
+<div layout="column">
+    <div layout="row" layout-xs="column">
+        <div style="max-height: " flex class="trans_in" ng-repeat="page in Home.cardItems.list">
+          <a ui-sref="{{ page.link }}">
+              <div flex class="overlay_container">
+                  <span class="overlay_title">{{page.title}}</span>
+                  <img class="img_affect" ng-src="{{ page.image }}" />
+              </div>
+          </a>
+        </div>
     </div>
-  </div>
-
+    <div flex style="border: 2px solid black; background: rgba(0,0,0,0.2)">
+        <h1 style="text-align: center; color: whitesmoke; text-shadow: 1px 2px 2px black">Recent Posts</h1>
+        <div layout="row" layout-xs="column" layout-align="center" layout-padding>
+            <div ng-repeat="post in Home.posts.recent | limitTo: 3" >
+                <h2 style="text-align: start; color: ghostWhite; text-shadow: 1px 2px 1px black">{{post.name}}</h2>
+                <p style="display: inline; color: whitesmoke">{{post.body | limitTo: 55}}</p><span style="display: inline" ng-show="post.body.length > 5">...</span>
+            </div>
+        </div>
+    </div>
 </div>
- -->
-
- <div layout="row" layout-xs="column">
-    <div flex class="trans_in" ng-repeat="page in Home.cardItems.list">
-      <a ui-sref="{{ page.link }}">
-          <div flex class="overlay_container">
-              <span class="overlay_title">{{page.title}}</span>
-              <img style="border: 2px solid black" class="img_affect" ng-src="{{ page.image }}" />
-          </div>
-      </a>
-    </div>
- </div>

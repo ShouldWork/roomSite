@@ -14,7 +14,7 @@
   	<div flex layout="column" layout-wrap>
         <md-content>
           <md-list flex layout="row">
-            <md-list-item ng-repeat="(key, app) in User.userInfo.linked_apps" style="clear: both;">
+            <md-list-item ng-repeat="(key, app) in User.userInfo.linked_apps">
               <a target="_blank" href="{{ app.url }}" style="margin-left: 45%">
                 <md-icon md-svg-icon="{{ key }}"></md-icon>
                 <div class="md-list-item-text" class="md-offset">
@@ -23,26 +23,22 @@
             </md-list-item>
           </md-list>
         </md-content>
-        <md-list flex>
-          <md-list-item style="float: left">
+        <md-list  layout="column" layout-align="center start">
+          <md-list-item>
             <md-icon md-svg-icon="phone"></md-icon>
             <div class="md-list-item-text" class="md-offset">
               <h3 style="color: ghostWhite">{{ User.userInfo.contacts.phone_mobile }} </h3>
               <p style="color: ghostWhite"> Phone </p>
             </div>
-            <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
-            </md-button>
           </md-list-item>
-          <md-list-item style="float: left;">
+          <md-list-item>
             <md-icon md-svg-icon="house-outline"></md-icon>
             <div class="md-list-item-text" class="md-offset">
               <h3 style="color: ghostWhite">{{ key }} {{ User.userInfo.contacts.address }} {{ User.userInfo.contacts.city }}, {{ User.userInfo.contacts.state }} </h3>
               <p style="color: ghostWhite"> Home </p>
             </div>
-            <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
-            </md-button>
           </md-list-item>
-          <md-list-item style="float: left;">
+          <md-list-item>
             <md-icon md-svg-icon="house-outline"></md-icon>
             <div class="md-list-item-text" class="md-offset">
               <h3 style="color: ghostWhite">{{ User.userInfo.contacts.email }}</h3>
