@@ -111,14 +111,14 @@ a:active {
 
 .overlay_title {
     position: absolute;
-    background: rgba(255,255,255,.5);
     background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(0,0,0,.5));
     background: transparent;
     color: white;
     font-size: 3em;
-    margin: 1em;
     text-shadow: black 1px 2px 5px;
     z-index: 1;
+    top: 1.5em;
+    left: 1em;
 }
 
 .overlay_container {
@@ -186,4 +186,41 @@ a:active {
 .social-icons ul li a:active i {
   transition: none;
   color: #0b161c;
+}
+
+main {
+  /*background: blue;*/
+  overflow-y: auto;
+  /*min-height: 100%;*/
+}
+
+.postBox {
+  position: relative;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  cursor: pointer;
+  top: 0;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.postBox:hover{
+  top: -10;
+}
+
+.postBox h2{
+  margin-left: 1em;
+}
+.postBox span {
+  display: inline;
+}
+
+.postBox p{
+  color: ghostWhite;
+  text-shadow: 1px 2px 1px black;
+  /*align-self: center;*/
+}
+
+.smallify {
+  color: red;
 }

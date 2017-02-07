@@ -1,6 +1,6 @@
 
 <div class="padding-inner" ng-cloak>
-  <div layout="row" layout-wrap layout-align="start center">
+  <div layout="row" layout-wrap>
     <div flex="33" flex-sm="50" flex-xs="100" class="trans_in" ng-repeat="User in allUsers.userData.list track by User.id" style="height: 332px; overflow: hidden">
         <!--<div ng-repeat="(key,contacts) in User.linked_apps">{{ key }} | {{ contacts }}</div>-->
         <md-card class="md-whiteframe-8dp" style="cursor: pointer; position: relative; max-height: 322px">
@@ -14,7 +14,11 @@
                       <div class="span10 offset1">
                         <div class="social-icons">
                           <ul>
-                            <li ng-repeat="(key, contacts) in User.linked_apps"><a target="_blank" ng-href="{{ contacts.url }}"><md-icon md-svg-icon="{{ key }}"></md-icon></a></li>
+                            <li ng-repeat="(key, contacts) in User.linked_apps">
+                              <a target="_blank" ng-href="{{ contacts.url }}">
+                                <md-icon md-svg-icon="{{ key }}"></md-icon>
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -22,7 +26,7 @@
                   </div>
                 </md-menu-content>
               </md-menu>
-              <img ng-click="allUsers.goto(User.id)" ng-src="{{User.image}}" class="md-card-image" alt="" style="height:100%; width: 100%; object-fit: cover"/>
+              <img ng-click="allUsers.goto(User.id)" ng-src="{{User.image}}" class="md-card-image" alt="{{User.name}}"/>
         </md-card>
         <div class="cardTitleContainer">
             <span class="md-whiteframe-8dp cardTitle">{{ User.name }}</span>

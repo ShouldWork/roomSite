@@ -1,6 +1,6 @@
-<div layout="column">
+<div layout="column" layout-align="center center">
     <div layout="row" layout-xs="column">
-        <div style="max-height: " flex class="trans_in" ng-repeat="page in Home.cardItems.list">
+        <div flex class="trans_in" ng-repeat="page in Home.cardItems.list">
           <a ui-sref="{{ page.link }}">
               <div flex class="overlay_container">
                   <span class="overlay_title">{{page.title}}</span>
@@ -9,12 +9,17 @@
           </a>
         </div>
     </div>
-    <div flex style="border: 2px solid black; background: rgba(0,0,0,0.2)">
-        <h1 style="text-align: center; color: whitesmoke; text-shadow: 1px 2px 2px black">Recent Posts</h1>
-        <div layout="row" layout-xs="column" layout-align="center" layout-padding>
-            <div ng-repeat="post in Home.posts.recent | limitTo: 3" >
-                <h2 style="text-align: start; color: ghostWhite; text-shadow: 1px 2px 1px black">{{post.name}}</h2>
-                <p style="display: inline; color: whitesmoke">{{post.body | limitTo: 55}}</p><span style="display: inline" ng-show="post.body.length > 5">...</span>
+    <div flex>
+        <h1>Recent Posts</h1>
+        <hr />
+        <div layout="row" layout-xs="column" layout-align="center start" layout-padding layout-margin>
+            <div ng-repeat="post in Home.posts.recent | limitTo: 3" flex="33" class="postBox">
+                <!-- {{ post }} -->
+                <h2>{{post.title}}:</h2>
+                <div style="background: grey; display: flex; flex-direction: column; padding: 1em; box-shadow: 1px 1px 5px 0 black">
+                  <p>{{post.body | limitTo: 50}}</p><span ng-show="post.body.length > 50">...</span>
+                  <cite style="align-self: flex-end; color: whitesmoke">-- {{ post.author }}</cite>
+                </div> 
             </div>
         </div>
     </div>

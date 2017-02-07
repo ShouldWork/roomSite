@@ -12,18 +12,20 @@ angular.module('homeCtrl', ['homeService'])
     });
 
 	self.posts= {
-	    recent: [
-            {
-                name: 'First one',
-                body: 'this is the body of the first'
-            },
-            {
-                name: 'Second one',
-                body: 'This is the body of the second recent post'
-            },
-            {
-                name: 'Third one',
-                body: 'Body text of the third recent post'
-            }]
+	    recent: [{
+            title: 'First one',
+            body: 'this is the body of the first',
+            author: "Blake Locke"
+        },
+        {
+            title: 'Second one', 
+            body: 'This is the body of the second recent post',
+            author: "Kevin Newcomb"
+        },
+        {
+            title: 'Third one',
+            body: 'Body text of the third recent post',
+            author: "John Moore"
+        }]
     };
 });
