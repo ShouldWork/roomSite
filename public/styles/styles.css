@@ -188,11 +188,6 @@ a:active {
   color: #0b161c;
 }
 
-main {
-  /*background: blue;*/
-  overflow-y: auto;
-  /*min-height: 100%;*/
-}
 
 .postBox {
   position: relative;
@@ -223,4 +218,23 @@ main {
 
 .smallify {
   color: red;
+}
+
+footer {
+  background-color: #ccc;
+}
+
+.smallFill{
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.noBullet{
+  list-style: none;
+}
+.postGroupContainer{
+  background-color: rgba(0,0,0,0.5);
 }

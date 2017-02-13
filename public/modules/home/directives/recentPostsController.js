@@ -16,4 +16,4 @@ angular.module('recentPostsController',[])
         	body: 'Body text of the third recent post',
         	author: "Blake Locke"
         }];
-    });
+});

@@ -1,0 +1,10 @@
+<div layout="column" layout-padding>
+	<h2>What do you gotta say 'bout dat?</h2> 
+		<md-button class="md-fab md-mini" aria-lable="Add post" style="align-self:flex-end">+</md-button>
+	<div layout="row" layout-align="center center">
+		<ul ng-repeat="post in Post.posts.list" class="noBullet">
+			<li><h3>{{post.title}}</h3></li>6 posts!
+			<li><h4>{{post.length}}<h4></li>
+		</ul>
+	</div> 
+</div>

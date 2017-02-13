@@ -1,15 +1,35 @@
-angular.module('tabsCtrl', ['tabsService'])
-.controller('tabsCtrl', function(Tabs) {
+angular.module('tabsCtrl', ['tabsService','postService'])
+.controller('tabsCtrl', function(Tabs, Posts) {
 	
-	self = this;
+	vm = this;
 
 
 	// Grab all the items from Tabs Service
 	Tabs.all()
     .then(function(data){
-        console.log(data);
-        self.tabItems = data.data; 
+        vm.tabItems = data.data; 
     }, function(data){
         console.log("Error occurred! " + data)
     });
+
+    Posts.all()
+    .then(function(data){
+        vm.posts = data.data;
+    }, function(error){
+        console.log("Something went wrong..." + error); 
+    }); 
+
+    vm.addPost = function (post){
+        var currentPosts = vm.posts; 
+        // var currentPosts.push(post);
+    }
+
+})
+.directive('posts', function(){
+    return {
+        restrict: 'E', 
+        templateUrl: 'modules/tabs/views/discussionPosts.html',
+        controller: 'tabsCtrl',
+        controllerAs: 'Post'
+    }
 });

@@ -19,7 +19,8 @@ var materialApp = angular
     'allUsersController',
     'allUsersService',
     'ngAnimate',
-    'recentPostsController'
+    'recentPostsController',
+    'postService'
 ]).config(function($mdThemingProvider, $mdIconProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('grey')

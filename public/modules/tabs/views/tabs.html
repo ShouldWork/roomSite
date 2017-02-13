@@ -1,10 +1,19 @@
-<md-content>
-  <md-tabs md-dynamic-height md-border-bottom>
+<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+	<md-tab label="Discussions">
+		<md-tab-body>
+			<posts></posts>
+		</md-tab-body>
+	</md-tab>
+</md-tabs>
+
+
+<!-- <md-content>
+  <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
     <md-tab ng-repeat="tab in Tabs.tabItems.list" label="{{ tab.title }}">
-      <md-content class="md-padding padding-inner" ng-src='./temp-assets/card-angular-material.png'>
+      <md-tab-body class="md-padding padding-inner" ng-src='./temp-assets/card-angular-material.png'>
         <h3 class="md-headline">{{ tab.title }}</h3>
         <p>{{ tab.text }}</p>
-      </md-content>
+      </md-tab-body>
     </md-tab>
   </md-tabs>
-</md-content>
+</md-content> -->

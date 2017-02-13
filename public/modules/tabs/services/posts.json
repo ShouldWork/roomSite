@@ -1,0 +1,19 @@
+{
+        "list":[
+                {
+                        "id":"1",
+                        "title":"Payments",
+                        "body": "Track and update pending payments between roommates"
+                },
+                {
+                        "id":"2",
+                        "title":"Discussions",
+                        "body": "Open forum for whatever you want to discuss."
+                },
+                {
+                        "id":"3",
+                        "title":"Cleaning",
+                        "body": "Track and update cleaning schedules such as dishes, vaccuuming, etc.." 
+                }
+        ]
+}

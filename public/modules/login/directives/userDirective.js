@@ -25,7 +25,7 @@ angular.module('userInfoWidget', [])
 .directive('recentPosts', function() {
     return {
         restrict: 'E',
-        template:'<div ng-repeat="post in posts"><h1>{{post.name}}</h1><p>{{post.body}}</p></div>',
+        templateUrl: 'modules/posts/views/recentPosts.html',
         controller: 'recentPostsController',
         controllerAs: 'posts'
     }
