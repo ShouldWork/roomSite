@@ -2,18 +2,18 @@
         "list":[
                 {
                         "id":"1",
-                        "title":"Payments",
-                        "body": "Track and update pending payments between roommates"
+                        "title":"Random",
+                        "body": "Something about everything no restrictions"
                 },
                 {
                         "id":"2",
-                        "title":"Discussions",
-                        "body": "Open forum for whatever you want to discuss."
+                        "title":"House stuff",
+                        "body": "Discuss house tasks, cleaning, maintenance, etc."
                 },
                 {
                         "id":"3",
-                        "title":"Cleaning",
-                        "body": "Track and update cleaning schedules such as dishes, vaccuuming, etc.." 
+                        "title":"Events",
+                        "body": "Plan upcoming events" 
                 }
         ]
 }

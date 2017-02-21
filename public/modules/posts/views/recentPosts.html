@@ -2,12 +2,12 @@
     <h1>Recent Posts</h1>
     <hr />
     <div layout="row" layout-xs="column" layout-align="center start" layout-padding layout-margin>
-        <div ng-repeat="post in Home.posts.recent | limitTo: 3" flex="33" class="postBox">
+        <div ng-repeat="post in Home.posts.recent | limitTo: 3" flex="33" class="postBox" layout-padding>
             <!-- {{ post }} -->
-            <h2>{{post.title}}:</h2>
-            <div style="background: grey; display: flex; flex-direction: column; padding: 1em; box-shadow: 1px 1px 5px 0 black">
-              <p>{{post.body | limitTo: 50}}</p><span ng-show="post.body.length > 50">...</span>
-              <cite style="align-self: flex-end; color: whitesmoke">-- {{ post.author }}</cite>
+            <div layout="column" class="md-whiteframe-4dp">
+              <h2 flex="grow">{{post.title}}:</h2>
+              <p style="font-style: italic">"{{post.body | limitTo: 50}}"</p><span ng-show="post.body.length > 50">..."</span>
+              <cite style="align-self: flex-end; text-decoration: italic">-- {{ post.author }}</cite>
             </div> 
         </div>
     </div>

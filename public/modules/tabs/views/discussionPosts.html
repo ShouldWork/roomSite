@@ -1,9 +1,9 @@
 <div layout="column" layout-padding layout-fill>
-	<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+	
 	<div layout="row" layout-align="center center">
-		<ul ng-repeat="post in Post.posts.list" class="noBullet">
-			<li><h3>{{post.title}}</h3></li>6 posts!
-			<li><h4>{{post.length}}<h4></li>
+		<ul flex="33" ng-repeat="post in Post.posts.list" class="md-whiteframe-4dp noBullet" layout-margin layout-padding style="cursor: pointer">
+			<li><h3>{{post.title}}</h3></li>
+			<li><p>{{post.body}}<p></li>
 		</ul>
 	</div>
 </div>

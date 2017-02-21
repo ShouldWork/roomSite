@@ -19,66 +19,10 @@
 
 </head>
 
-<body ng-app="materialApp" layout="row" ng-controller="appCtrl as app">
-    <md-sidenav class="md-sidenav-left md-whiteframe-4dp ng-cloak" md-component-id="left">
+<body ng-app="materialApp" ng-controller="appCtrl as app">
 
-        <md-toolbar class="md-toolbar-tools" layout="row" layout-align="center-center">
-            <md-button ng-click="app.toggleLeft()" class="md-icon-button" aria-label="Close User Menu">
-              <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
-            </md-button>
-
-            <h3 class="md-toolbar-tools">Menu</h3>
-        
-        </md-toolbar>
-
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/home">
-            <span>Home</span>
-        </md-list-item>
-        <md-divider></md-divider>
-    
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
-            <span>Peeps</span>
-        </md-list-item>
-        <md-divider></md-divider>
-    
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/list">
-            <span>Objectives</span>
-        </md-list-item>
-        <md-divider></md-divider>
-    
-        <md-list-item layout="row" ng-click="app.toggleLeft()" href="/tabs">
-            <span>Duties</span>
-        </md-list-item>
-        
-
-
-    </md-sidenav>
-
-    <md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
-
-        <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
-            <h3 class="md-toolbar-tools">Profile</h3>
-            
-            <div layout="column">
-              <user-loggedin short="true" limit="5" user="userInfo.displayName"></user-loggedin>
-            </div>  
-            <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
-              <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
-            </md-button>
-
-        </md-toolbar>
-        <md-list-item ng-show="!userInfo.isLoggedIn" layout="row" ng-click="app.showCreateUserDialog($event)"> 
-            <span>Create User</a></span> 
-        </md-list-item> 
-            
-        <md-divider></md-divider>
-
-        <md-list-item ng-show="userInfo.isLoggedIn" layout="row" ng-click="app.logout()"> 
-            <span>Logout</a></span> 
-        </md-list-item> 
-    </md-sidenav>
-
-<div style="width:100%;" class="ng-cloak" layout="column" layout-fill>
+<div class="ng-cloak" layout="column" style="min-height:100%">
+  <!-- Header -->
     <md-toolbar class="toolbar">
         <div layout="row" layout-align="center center" layout-wrap class="md-toolbar-tools">
 
@@ -95,16 +39,12 @@
               <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
         </div>
-<!-- 
-        <div layout="row" layout-align="center center" layout-wrap>
-            <h1 flex="90" class="md-headline">{{ title }}</h1>
-            <h3 flex="80" class="sm-headline">{{ content }}</h3>
-        </div> -->
-
     </md-toolbar>
-    <div ui-view class="smallFill"></div>
+    <!-- <div layout-fill style='background: red; min-height: 100px' flex="grow"></div> -->
+
+    <div ui-view flex="grow"></div>
     <footer>
-        <div layout="row" layout-align="center center">
+        <div layout="row"  layout-align="center center">
             <h2>My Awesome Footer</h2>
         </div>
     </footer>

@@ -1,25 +1,13 @@
 <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex || 0">
 	<md-tab label="Discussions" select>
-		<md-tab-body>
-			<posts></posts>
-			<posts></posts>
-			<posts></posts>
-
+		<md-tab-body layout="column">
+			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+			<posts layout-fill></posts>
 			<md-button class="md-fab md-fab-bottom-right" aria-label="Add post">
 				<md-icon class="material-icons">add circle outline</md-icon>
 			</md-button>
 		</md-tab-body>
+		<md-content>
+		</md-content>
 	</md-tab>
 </md-tabs>
-
-
-<!-- <md-content>
-  <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
-    <md-tab ng-repeat="tab in Tabs.tabItems.list" label="{{ tab.title }}">
-      <md-tab-body class="md-padding padding-inner" ng-src='./temp-assets/card-angular-material.png'>
-        <h3 class="md-headline">{{ tab.title }}</h3>
-        <p>{{ tab.text }}</p>
-      </md-tab-body>
-    </md-tab>
-  </md-tabs>
-</md-content> -->

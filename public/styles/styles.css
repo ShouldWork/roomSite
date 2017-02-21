@@ -188,34 +188,6 @@ a:active {
   color: #0b161c;
 }
 
-
-.postBox {
-  position: relative;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-  cursor: pointer;
-  top: 0;
-  padding: 1em;
-  border: 2px solid black;
-  border-radius: 10px;
-}
-
-.postBox:hover{
-  top: -10;
-}
-
-.postBox h2{
-  margin-left: 1em;
-}
-.postBox span {
-  display: inline;
-}
-
-.postBox p{
-  color: ghostWhite;
-  text-shadow: 1px 2px 1px black;
-  /*align-self: center;*/
-}
-
 .smallify {
   color: red;
 }
@@ -234,7 +206,4 @@ footer {
 
 .noBullet{
   list-style: none;
-}
-.postGroupContainer{
-  background-color: rgba(0,0,0,0.5);
 }

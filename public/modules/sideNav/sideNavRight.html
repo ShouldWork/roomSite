@@ -1,0 +1,23 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
+
+    <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
+        <h3 class="md-toolbar-tools">Profile</h3>
+        
+        <div layout="column">
+          <user-loggedin short="true" limit="5" user="userInfo.displayName"></user-loggedin>
+        </div>  
+        <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
+          <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
+        </md-button>
+
+    </md-toolbar>
+    <md-list-item ng-show="!userInfo.isLoggedIn" layout="row" ng-click="app.showCreateUserDialog($event)"> 
+        <span>Create User</a></span> 
+    </md-list-item> 
+        
+    <md-divider></md-divider>
+
+    <md-list-item ng-show="userInfo.isLoggedIn" layout="row" ng-click="app.logout()"> 
+        <span>Logout</a></span> 
+    </md-list-item> 
+</md-sidenav>
