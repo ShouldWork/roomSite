@@ -29,7 +29,7 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                         $timeout(function(){
                             toastService.showSimpleToast('You are not logged in!');
                             $state.go('home')
-                        })
+                        });
                     return $q.reject(); 
                     }
                 }
@@ -52,7 +52,17 @@ router.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controllerAs: "allUsers",
             params: {
                 title: 'All da\' peeps' 
-            }
+            },
+            resolve: {
+                allUsers: function(Users){
+                    Users.all()
+                        .then(function(data){
+                            return data.data;
+                        },function(error){
+                            console.log(error);
+                        })
+                }
+           }
         })
         .state('list', {
             url: '/list',

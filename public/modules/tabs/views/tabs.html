@@ -1,7 +1,13 @@
-<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
-	<md-tab label="Discussions">
+<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex || 0">
+	<md-tab label="Discussions" select>
 		<md-tab-body>
 			<posts></posts>
+			<posts></posts>
+			<posts></posts>
+
+			<md-button class="md-fab md-fab-bottom-right" aria-label="Add post">
+				<md-icon class="material-icons">add circle outline</md-icon>
+			</md-button>
 		</md-tab-body>
 	</md-tab>
 </md-tabs>
