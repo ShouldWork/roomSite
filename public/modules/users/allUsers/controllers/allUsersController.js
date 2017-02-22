@@ -6,18 +6,15 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
     
 
     var originatorEv;
-    console.log(Users);
-    // self.userData = allUsers;
-    // console.log(userData);
 
     // Grab all the items from Cards Service
-    // Users.all()
-    // .then(function(data){
-    //     self.userData = data.data;
-    //     // console.log(data)
-    // },function(data){
-    //     console.log("An error occurred " + data);
-    // });
+    Users.all()
+    .then(function(data){
+        self.userData = data.data;
+        // console.log(data)
+    },function(data){
+        console.log("An error occurred " + data);
+    });
 
     self.goto = function(where){
         $state.go('peeps.details',{userId: where});
@@ -28,4 +25,16 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
         originatorEv = ev; 
         $mdOpenMenu(ev);
     };
+
+    self.isOpen = false;
+
+    self.topDirections = ['left', 'up'];
+    self.bottomDirections = ['down', 'right'];
+
+
+    self.availableModes = ['md-fling', 'md-scale'];
+    self.selectedMode = 'md-fling';
+
+    self.availableDirections = ['up', 'down', 'left', 'right'];
+    self.selectedDirection = 'down';
 });
