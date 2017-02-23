@@ -29,4 +29,16 @@ angular.module('userInfoWidget', [])
         controller: 'recentPostsController',
         controllerAs: 'posts'
     }
+})
+.directive('userCard', function(){
+   return {
+       restrict: 'E',
+       templateUrl:'modules/users/allUsers/directives/allUsersDirective.html',
+       scope:{
+           user: "@",
+           goTo: "&",
+           userImage:"@",
+           userName: "@"
+       }
+   }
 });
