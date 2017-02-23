@@ -111,14 +111,11 @@ a:active {
 
 .overlay_title {
     position: absolute;
-    background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(0,0,0,.5));
     background: transparent;
     color: white;
     font-size: 3em;
     text-shadow: black 1px 2px 5px;
     z-index: 1;
-    top: 1.5em;
-    left: 1em;
 }
 
 .overlay_container {
@@ -231,7 +228,14 @@ footer {
     margin-bottom: 0;
 }
 
-
+.userBox{
+  cursor: pointer;
+  position: relative;
+}
+.userBox img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 /*Styles from Material Design page*/
 .fabSpeedDialdemoBasicUsage .text-capitalize {
@@ -251,3 +255,4 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+

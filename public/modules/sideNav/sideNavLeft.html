@@ -1,0 +1,29 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp ng-cloak" md-component-id="left">
+    <md-toolbar class="md-toolbar-tools" layout="row" layout-align="center-center">
+        <md-button ng-click="app.toggleLeft()" class="md-icon-button" aria-label="Close User Menu">
+          <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
+        </md-button>
+
+        <h3 class="md-toolbar-tools">Menu</h3>
+    
+    </md-toolbar>
+
+    <md-list-item layout="row" ng-click="app.toggleLeft()" href="/home">
+        <span>Home</span>
+    </md-list-item>
+    <md-divider></md-divider>
+
+    <md-list-item layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
+        <span>Peeps</span>
+    </md-list-item>
+    <md-divider></md-divider>
+
+    <md-list-item layout="row" ng-click="app.toggleLeft()" href="/list">
+        <span>Objectives</span>
+    </md-list-item>
+    <md-divider></md-divider>
+
+    <md-list-item layout="row" ng-click="app.toggleLeft()" href="/tabs">
+        <span>Duties</span>
+    </md-list-item>
+</md-sidenav>

@@ -1,7 +1,9 @@
 <div flex>
-    <h1>Recent Posts</h1>
+    <div layout-padding>
+      <h1 style="text-align: center">Recent Posts</h1>
+    </div>
     <hr />
-    <div layout-gt-xs="row" layout="column" layout-align="space-around none"layout-padding layout-fill>
+    <div layout-gt-xs="row" layout="column" layout-align="space-around none" layout-padding layoutfill>
         <div ng-repeat="post in Home.posts.recent | limitTo: 3" flex="33"  layout-padding>
             <!-- {{ post }} -->
             <div layout="column" class="md-whiteframe-4dp postBox">

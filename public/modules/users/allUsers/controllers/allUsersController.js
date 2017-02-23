@@ -33,8 +33,8 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
 
 
     self.availableModes = ['md-fling', 'md-scale'];
-    self.selectedMode = 'md-fling';
+    self.selectedMode = 'md-scale';
 
     self.availableDirections = ['up', 'down', 'left', 'right'];
-    self.selectedDirection = 'down';
+    self.selectedDirection = 'left';
 });

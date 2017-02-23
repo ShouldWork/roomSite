@@ -1,15 +1,12 @@
 
 <div class="padding-inner" ng-cloak>
   <div layout="row" layout-wrap>
-    <div flex="33" flex-sm="50" flex-xs="100" class="trans_in" ng-repeat="User in allUsers.userData.list track by User.id" style="height: 332px; overflow: hidden">
+    <div flex="33" flex-sm="50" flex-xs="100" class="trans_in userBox" ng-repeat="User in allUsers.userData.list track by User.id">
         <!--<div ng-repeat="(key,contacts) in User.linked_apps">{{ key }} | {{ contacts }}</div>-->
-        <md-card class="md-whiteframe-8dp" style="cursor: pointer; position: relative; max-height: 322px">
+        <div flex class="md-whiteframe-8dp">
             <img ng-click="allUsers.goto(User.id)" ng-src="{{User.image}}" class="md-card-image" alt="{{User.name}}"/>
             <div class="lock-size" layout="row" layout-align="center center">
-                {{ allUsers.isOpen}}
-                <md-fab-speed-dial md-open="allUsers.isOpen" md-direction="{{allUsers.selectedDirection}}"
-                                   ng-class="allUsers.selectedMode">
-
+                <md-fab-speed-dial md-open="allUsers.isOpen" md-direction="{{allUsers.selectedDirection}}" ng-class="allUsers.selectedMode">
                     <md-fab-trigger>
                         <md-button aria-label="menu" class="md-fab md-warn">
                             <md-icon md-svg-src="contact"></md-icon>
@@ -29,7 +26,7 @@
                     </md-fab-actions>
                 </md-fab-speed-dial>
             </div>
-        </md-card>
+        </div>
         <div class="cardTitleContainer">
             <span class="md-whiteframe-8dp cardTitle">{{ User.name }}</span>
         </div>
