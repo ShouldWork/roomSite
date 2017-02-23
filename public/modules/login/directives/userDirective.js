@@ -38,7 +38,28 @@ angular.module('userInfoWidget', [])
            user: "@",
            goTo: "&",
            userImage:"@",
-           userName: "@"
+           userName: "@",
+           menuDirection: '=',
+           userId: '@'
+       },
+       controller: function ($scope,$state){
+            var self = $scope; 
+            self.isOpen = false;
+
+            self.topDirections = ['left', 'up'];
+            self.bottomDirections = ['down', 'right'];
+
+
+            self.availableModes = ['md-fling', 'md-scale'];
+            self.selectedMode = 'md-scale';
+
+            self.availableDirections = ['up', 'down', 'left', 'right'];
+            self.selectedDirection = 'right';
+
+            self.goTo = function(where, $state){
+                console.log($scope.$state);
+                $state.go('peeps.details',{userId: where});
+          };
        }
    }
 });

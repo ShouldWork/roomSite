@@ -1,13 +1,7 @@
-
-<!--<div ng-repeat="(key,contacts) in User.linked_apps">{{ key }} | {{ contacts }}</div>-->
-    <!--Testing: {{ user }}-->
-<!--{{ userName }}-->
 <div flex class="md-whiteframe-8dp">
-    <img ng-click="goTo()" ng-src="{{ userImage }}" class="md-card-image" alt="{{userName}}"/>
     <div class="lock-size" layout="row" layout-align="center center">
 
-        <md-fab-speed-dial ng-click="isOpen= !isOpen"  md-open="false" md-direction="{{ isOpen }}" ng-class="md-scale">
-         {{ isOpen }}
+        <md-fab-speed-dial md-open="isOpen" md-direction="{{ selectedDirection }}" class="{{ selectedMode }} fabSpeedDial">
             <md-fab-trigger>
                 <md-button aria-label="menu" class="md-fab md-warn">
                     <md-icon md-svg-src="contact"></md-icon>
@@ -29,6 +23,7 @@
         </md-fab-speed-dial>
 
     </div>
+    <img ng-click="goTo(userId)" ng-src="{{ userImage }}" class="md-card-image" alt="{{userName}}"/>
 </div>
 <div class="cardTitleContainer">
     <span class="md-whiteframe-8dp cardTitle">{{ userName }}</span>

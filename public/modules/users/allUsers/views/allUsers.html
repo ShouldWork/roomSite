@@ -1,11 +1,9 @@
-<div class="padding-inner" ng-cloak>
-    <div layout="row" layout-wrap>
+<div ng-cloak>
+    <div layout="row" layout-wrap layout-align="space-around none">
         <div flex="33" flex-sm="50" flex-xs="100" class="trans_in userBox" ng-repeat="User in allUsers.userData.list track by User.id">
-            {{ User.id }}
             <user-card user-name="{{ User.name }}"
                        user-image="{{ User.image }}"
-                       go-to="allUsers.goTo(User.id)"
-                       is-open=""
+                       user-id="{{ User.id }}"
             ></user-card>
         </div>
     </div>
