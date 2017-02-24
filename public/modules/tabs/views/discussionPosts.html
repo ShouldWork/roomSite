@@ -1,7 +1,7 @@
 
-<div layout-gt-xs="row" layout="column">
-	<ul flex layout-margin ng-repeat="post in Post.posts.list" class="md-whiteframe-4dp noBullet postBox">
-		<li><h2>{{post.title}}</h2></li>
-		<li><p>{{post.body}}<p></li>
-	</ul>
-</div>
+<ul layout-padding class="md-whiteframe-4dp noBullet postBox" layout="column">
+	<li><h2>{{ postTitle }}</h2></li>
+	<li><p>{{ postBody }}<p></li>
+	<li style="align-self: flex-end"><cite>-- {{ postAuthor }}</cite></li>
+</ul>
+

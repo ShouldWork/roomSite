@@ -3,6 +3,7 @@ angular.module('tabsCtrl', ['tabsService','postService'])
 	
 	vm = this;
 
+    vm.toTest = "Something to test";
 
 	// Grab all the items from Tabs Service
 	Tabs.all()
@@ -14,7 +15,7 @@ angular.module('tabsCtrl', ['tabsService','postService'])
 
     Posts.all()
     .then(function(data){
-        vm.posts = data.data;
+        vm.posts = data.data.list;
     }, function(error){
         console.log("Something went wrong..." + error); 
     }); 
@@ -30,6 +31,11 @@ angular.module('tabsCtrl', ['tabsService','postService'])
         restrict: 'E', 
         templateUrl: 'modules/tabs/views/discussionPosts.html',
         controller: 'tabsCtrl',
-        controllerAs: 'Post'
+        controllerAs: 'Post',
+        scope:{
+            postTitle: "@",
+            postBody: "@",
+            postAuthor: "@"
+        }
     }
 });

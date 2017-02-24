@@ -3,17 +3,20 @@
                 {
                         "id":"1",
                         "title":"Random",
-                        "body": "Something about everything no restrictions"
+                        "body": "Something about everything no restrictions",
+                        "author": "Kevin Newcomb"
                 },
                 {
                         "id":"2",
                         "title":"House stuff",
-                        "body": "Discuss house tasks, cleaning, maintenance, etc."
+                        "body": "Discuss house tasks, cleaning, maintenance, etc.",
+                        "author": "Blake Locke"
                 },
                 {
                         "id":"3",
                         "title":"Events",
-                        "body": "Plan upcoming events" 
+                        "body": "Plan upcoming events",
+                        "author": "John Moore" 
                 }
         ]
 }

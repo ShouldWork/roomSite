@@ -1,11 +1,53 @@
-<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex || 0">
-	<md-tab label="Discussions" select>
+<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+	<md-tab label="Discussions">
+		<md-tab-body layout="row" layout-fill>
+		<!-- {{ Tabs.posts }} -->
+			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
+				<div flex ng-repeat="post in Tabs.posts">
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+				</div>
+			</div>
+			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
+			</md-button>
+		</md-tab-body>
+		<md-content>
+		</md-content>
+	</md-tab>
+	<md-tab label="House Stuff">
 		<md-tab-body layout="column">
 			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
-			<posts layout-fill></posts>
-			<md-button class="md-fab md-fab-bottom-right" aria-label="Add post">
-				<md-icon class="fa fa-plus fa-2x" aria-hidden="true"></md-icon>
+			
+			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
+				<div flex ng-repeat="post in Tabs.posts">
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+				</div>
+			</div>
+
+			
+			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
 			</md-button>
+		</md-tab-body>
+		<md-content>
+		</md-content>
+	</md-tab>
+	<md-tab label="Random">
+		<md-tab-body layout="column">
+			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+			
+			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
+				<div flex ng-repeat="post in Tabs.posts">
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+				</div>
+			</div>
+
+			
+			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
+			</md-button>
+
 		</md-tab-body>
 		<md-content>
 		</md-content>

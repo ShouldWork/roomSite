@@ -23,8 +23,8 @@ var materialApp = angular
     'postService'
 ]).config(function($mdThemingProvider, $mdIconProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('grey')
-    .accentPalette('light-green');
+    .primaryPalette('orange')
+    .accentPalette('deep-orange');
    $mdIconProvider
     .icon("dark", 'img/more_dark.svg')
     .icon("light", 'img/more.svg')

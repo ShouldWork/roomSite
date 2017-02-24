@@ -2,19 +2,19 @@
 	"list":[
 		{
 			"id":"1",
-			"image":"https://placeimg.com/400/420/people",
+			"image":"https://placeimg.com/460/620/people",
 			"title":"Peeps",
 			"link":"peeps.allUsers"
 		},
 		{
 			"id":"2",
-			"image":"https://placeimg.com/400/420/arch",
+			"image":"https://placeimg.com/460/620/arch",
 			"title":"Objectives",
 			"link":"list"
 		},
 		{
 			"id":"3",
-			"image":"https://placeimg.com/400/420/tech",
+			"image":"https://placeimg.com/460/620/tech",
 			"title":"Discussions",
 			"link":"tabs"
 		}
