@@ -1,5 +1,5 @@
-<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
-	<md-tab label="Discussions">
+<md-tabs md-dynamic-height layout="column" layout-fill md-border-bottom md-selected="selectedIndex">
+	<md-tab layout-fill layout="column" label="Discussions">
 		<md-tab-body layout="row" layout-fill>
 		<!-- {{ Tabs.posts }} -->
 			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
@@ -8,7 +8,7 @@
 					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
 				</div>
 			</div>
-			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+			<md-button style="position: absolute" class="md-fab md-primary" aria-label="Add post">
 				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
 			</md-button>
 		</md-tab-body>
