@@ -1,37 +1,35 @@
 <md-tabs md-dynamic-height layout="column" layout-fill md-border-bottom md-selected="selectedIndex">
-	<md-tab layout-fill layout="column" label="Discussions">
-		<md-tab-body layout="row" layout-fill>
-		<!-- {{ Tabs.posts }} -->
+	<md-tab label="Discussions">
+		<md-tab-body layout="row">
 			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+
 			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
 				<div flex ng-repeat="post in Tabs.posts">
 					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
-				</div>
-			</div>
-			<md-button style="position: absolute" class="md-fab md-primary" aria-label="Add post">
-				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
-			</md-button>
-		</md-tab-body>
-		<md-content>
-		</md-content>
-	</md-tab>
-	<md-tab label="House Stuff">
-		<md-tab-body layout="column">
-			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
-			
-			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
-				<div flex ng-repeat="post in Tabs.posts">
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
 					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
 				</div>
 			</div>
 
-			
-			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+			<md-button class="md-fab md-primary" style="position: absolute; top:10px; right: 10px;" aria-label="Add post" ng-click="Tabs.showNewFormDialogue($event)">
 				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
 			</md-button>
 		</md-tab-body>
-		<md-content>
-		</md-content>
+	</md-tab>
+	<md-tab label="House Stuff">
+		<md-tab-body layout="column">
+			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+	
+			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
+				<div flex ng-repeat="post in Tabs.posts">
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+				</div>
+			</div>
+			
+			<md-button class="md-fab md-primary md-fab-raised" style="position: absolute; top:10px; right: 10px;" aria-label="Add post">
+				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
+			</md-button>
+		</md-tab-body>
 	</md-tab>
 	<md-tab label="Random">
 		<md-tab-body layout="column">
@@ -43,13 +41,9 @@
 				</div>
 			</div>
 
-			
-			<md-button class="md-fab md-fab-bottom-right md-primary md-fab-raised" aria-label="Add post">
+			<md-button class="md-fab md-primary md-fab-raised" style="position: absolute; top:10px; right: 10px;" aria-label="Add post">
 				<md-icon class="fa fa-plus fa-2x " aria-hidden="true"></md-icon>
 			</md-button>
-
-		</md-tab-body>
-		<md-content>
-		</md-content>
+		</md-tab-body> 
 	</md-tab>
 </md-tabs>
