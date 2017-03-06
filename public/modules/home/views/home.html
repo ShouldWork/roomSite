@@ -1,6 +1,6 @@
 <div layout="column">
-    <div layout="column" layout-gt-sm="row" layout-align="center none">
-        <div class="trans_in" ng-repeat="page in Home.cardItems.list" style="width: auto">
+    <div layout="row" layout-xs="column" layout-sm="column" layout-md="row">
+        <div ng-repeat="page in Home.cardItems.list" flex-gt-sm="33" flex="1" flex-xs>
           <a ui-sref="{{ page.link }}">
               <div class="overlay_container">
                   <span class="overlay_title">{{page.title}}</span>
