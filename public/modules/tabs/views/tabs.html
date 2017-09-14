@@ -1,13 +1,13 @@
 <md-tabs md-dynamic-height layout="column" layout-fill md-border-bottom md-selected="selectedIndex">
 	<md-tab label="Discussions">
 		<md-tab-body layout="row">
-			<h2 style="text-align: center">What do you gotta say 'bout dat?</h2>
+			<h2 style="text-align: center; color: white;">What do you gotta say 'bout dat?</h2>
 
 			<div layout-gt-sm="row" layout="column" layout-align="center center" layout-margin>
 				<div flex ng-repeat="post in Tabs.posts">
 					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
-					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
-					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+					<!-- <posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts>
+					<posts layout-fill post-title="{{ post.title }}" post-author="{{ post.author }}" post-body="{{ post.body }}"></posts> -->
 				</div>
 			</div>
 

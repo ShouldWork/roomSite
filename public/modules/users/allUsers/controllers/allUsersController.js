@@ -11,7 +11,7 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
     Users.all()
     .then(function(data){
         self.userData = data.data;
-        // console.log(data)
+        console.log(data)
     },function(data){
         console.log("An error occurred " + data);
     });
@@ -19,22 +19,4 @@ angular.module('allUsersController', ['allUsersService','ngMaterial'])
     self.goto = function(where){
         $state.go('peeps.details',{userId: where});
     };
-
-    self.openMenu = function($mdOpenMenu, ev) {
-        // console.log($mdMenu); 
-        originatorEv = ev; 
-        $mdOpenMenu(ev);
-    };
-
-    self.isOpen = false;
-
-    self.topDirections = ['left', 'up'];
-    self.bottomDirections = ['down', 'right'];
-
-
-    self.availableModes = ['md-fling', 'md-scale'];
-    self.selectedMode = 'md-scale';
-
-    self.availableDirections = ['up', 'down', 'left', 'right'];
-    self.selectedDirection = 'left';
 });

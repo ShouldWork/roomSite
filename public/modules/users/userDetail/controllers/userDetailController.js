@@ -13,6 +13,5 @@ angular.module('userController',['userData'])
     },function(data){
         console.log("Error occurred! " + data); 
     });
-
 });
 

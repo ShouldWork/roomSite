@@ -22,6 +22,20 @@ md-tabs md-tabs-wrapper {
 .md-button {
     padding: 0 12px;
 }
+.sideNavShow {
+    background: lightslategray;
+}
+.logoMain {
+    color: white; 
+    font-size: 1.5em;
+    padding: .5em;
+    cursor: pointer;
+}
+.sideNavItem {
+    color: white;
+    font-size: 1.5em;
+    padding: .25em;
+}
 
 
 .background_material {
@@ -57,27 +71,42 @@ a:active {
 .cardTitle {
     color: ghostWhite;
     background-color: rgba(0,0,0,0.7);
-    padding: 10px 15px;
+    padding: .25em;
     border-bottom-right-radius: 10px;
+    border: 2px solid ghostwhite;
+    position: relative;
+    bottom: -25px;
+}
+.cardTitleDetail {
+    color: ghostWhite;
+    background: rgba(0,0,0,0.4);
+    padding: .5em;
+    /* border-bottom-right-radius: 1em; */
+    position: absolute;
+    bottom:20px;
+    left: 10px;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 .cardTitleContainer {
     position: relative;
     top: -3em;
     text-align: end;
-    cursor: 
-    pointer;
+    cursor: pointer;
+}
+
+.fabShadow {
+    box-shadow: rgba(0,0,0,.7) 5px 8px 15px;
 }
 
 .cardIcon_more {
-    position: absolute;
-    top:0;
     background-color: transparent;
-    right: 0em;
-    /*z-index: 100;*/
-    font-size: 1.5em;
-    text-shadow: black 1px 2px 5px;
+    font-size: 2em;
     font-weight: 600;
+    text-shadow: grey 0px 0px 0px;
+    color: cadetblue;
+    border-bottom-left-radius: 1em
 }
 
 
@@ -190,7 +219,7 @@ a:active {
 }
 
 footer {
-  background-color: #ccc;
+  background-color: lightslategrey;
 }
 
 .smallFill{
@@ -213,6 +242,8 @@ footer {
     -ms-transition: all .25s linear;
     -o-transition: all .25s linear;
     transition: all .25s linear;
+    border: 1px solid;
+    margin: 1em; 
 }
 .postBox:hover{
     box-shadow: 0 8px 8px -6px rgba(0,0,0,.2), 0 11px 13px 1px rgba(0,0,0,.14), 0 6px 17px 2px rgba(0,0,0,.12);
@@ -220,23 +251,54 @@ footer {
 .postBox p{
     font-style: italic;
     font-weight: 400;
+    color: white;
 }
 .postBox cite{
     align-self: flex-end;
+    color: white;
 }
 .postBox h2{
     margin-bottom: 0;
+    color: white;
 }
 
 .userBox{
   cursor: pointer;
   position: relative;
+  margin: .5em; 
 }
 .userBox img {
-    max-width: 100%;
-    max-height: 100%;
+    min-width: 100%;
 }
 
+.userDetailCard {
+    max-width: 100%;
+    border: solid 2px cadetblue;
+    margin: .5em;
+    padding: 1em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+}
+.userDetailCardContact {
+    border-radius: 25px;
+    /* background: rgba(255,160,122,.5); */
+    margin: .5em;
+    flex-flow: column;
+    /* box-shadow: lightgrey 2px 5px 5px, black 5px 10px 16px; */
+}
+
+.userDetailCardSocial {
+    border-radius: 2em;
+    border: solid 1px;
+    margin: 5px;
+    cursor: pointer;
+}
+.userDetailCardSocial span {
+    float: right; 
+    font-size: 1.75em;
+    padding: 0;
+    margin-left: 1em;
+}
 /*Styles from Material Design page*/
 .fabSpeedDialdemoBasicUsage .text-capitalize {
     text-transform: capitalize; }

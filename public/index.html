@@ -23,6 +23,26 @@
 
 <div class="ng-cloak" layout="column" style="min-height:100%">
   <!-- Header -->
+  <md-sidenav class="sideNavShow md-sidenav-left md-whiteframe-4dp ng-cloak" md-component-id="left" >
+    <div style="padding: 1em;">
+     <img src="/img/logo.png" alt="">
+    </div>
+    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/home">
+      <span class="sideNavItem">Home</span>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
+        <span class="sideNavItem">Peeps</span>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/list">
+        <span class="sideNavItem">Objectives</span>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item style="padding: 1em"  layout="row" ng-click="app.toggleLeft()" href="/tabs">
+        <span class="sideNavItem">Discussions</span>
+    </md-list-item>
+  </md-sidenav>
     <md-toolbar class="toolbar">
         <div layout="row" layout-align="center center" layout-wrap class="md-toolbar-tools">
 
@@ -30,7 +50,7 @@
               <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
             </md-button>
             <div flex>
-                <span ui-sref="home" style="color: ghostWhite; padding: 10px; cursor: pointer">roomSite</span> 
+                <span ui-sref="home" class="logoMain">RoomSite</span> 
             </div>
             <div>
               <user-loggedin limit="50" short="false" user="userInfo.displayName"></user-loggedin>
@@ -40,6 +60,31 @@
             </md-button>
         </div>
     </md-toolbar>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
+        <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
+            <h3 class="md-toolbar-tools">Profile</h3>
+            
+            <div layout="column">
+              <!-- <span>{{userInfo.isLoggedIn}}</span>  -->
+              <user-loggedin short="true" limit="5" user="userInfo.displayName"></user-loggedin>
+            </div>  
+            <md-button ng-click="login.toggleRight()" class="md-icon-button" aria-label="Close User Menu">
+              <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
+            </md-button>
+            <!-- <h4>{{ app.userLoggedIn.displayName }}<h4> -->
+    
+        </md-toolbar>
+        <md-list-item ng-show="!userInfo.isLoggedIn" layout="row" ng-click="app.showCreateUserDialog($event)"> 
+            <span>Create User</a></span> 
+        </md-list-item> 
+            
+        <md-divider></md-divider>
+    
+        <md-list-item ng-show="userInfo.isLoggedIn" layout="row" ng-click="app.logout()"> 
+            <span>Logout</a></span> 
+        </md-list-item> 
+    </md-sidenav>
+  </md-sidenav>
     <!-- <div layout-fill style='background: red; min-height: 100px' flex="grow"></div> -->
 
     <div ui-view flex="grow"></div>

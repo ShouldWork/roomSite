@@ -39,11 +39,14 @@ angular.module('userInfoWidget', [])
            goTo: "&",
            userImage:"@",
            userName: "@",
+           userSocial: "@",
            menuDirection: '=',
            userId: '@'
        },
        controller: function ($scope,$state){
             var self = $scope; 
+            // self.userSocial = userSocial;
+            console.log(self.userSocial);
             self.isOpen = false;
 
             self.topDirections = ['left', 'up'];
@@ -54,10 +57,10 @@ angular.module('userInfoWidget', [])
             self.selectedMode = 'md-scale';
 
             self.availableDirections = ['up', 'down', 'left', 'right'];
-            self.selectedDirection = 'right';
+            self.selectedDirection = 'down';
 
-            self.goTo = function(where, $state){
-                console.log($scope.$state);
+            self.goTo = function(where){
+                console.log($state);
                 $state.go('peeps.details',{userId: where});
           };
        }

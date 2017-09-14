@@ -1,31 +1,56 @@
-<div flex class="md-whiteframe-8dp">
-    <div class="lock-size" layout="row" layout-align="center center">
 
+
+<div class="md-whiteframe-8dp" style="height: 300px; overflow: hidden; margin-left: 15px; margin-right: 15px">
+    <div class="lock-size" layout="row" layout-align="center center">
         <md-fab-speed-dial md-open="isOpen" md-direction="{{ selectedDirection }}" class="{{ selectedMode }} fabSpeedDial">
             <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-warn">
+                <md-button aria-label="menu" class="md-fab md-warn fabShadow" style="box-shadow: rgba(0,0,0,.7) 5px 8px 15px">
                     <md-icon md-svg-src="contact"></md-icon>
                 </md-button>
             </md-fab-trigger>
 
             <md-fab-actions>
-                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini fabShadow">
                     <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
                 </md-button>
-                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                <!-- <a target="_blank" href="{{ userSocial.url }}"> -->
+                <md-button aria-label="Facebook" class="md-fab md-raised md-mini fabShadow">
                     <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
                 </md-button>
-                <md-button aria-label="LinkedIn" class="md-fab md-raised md-mini">
-                    <md-icon md-svg-src="linkedin" aria-label="Google Hangout"></md-icon>
+                <!-- </a> -->
+                <md-button aria-label="LinkedIn" class="md-fab md-raised md-mini fabShadow">
+                    <md-icon md-svg-src="linkedin" aria-label="LinkedIn"></md-icon>
                 </md-button>
             </md-fab-actions>
-
         </md-fab-speed-dial>
-
     </div>
-    <img ng-click="goTo(userId)" ng-src="{{ userImage }}" class="md-card-image" alt="{{userName}}"/>
+    <img ng-click="goTo(userId)" ng-src="{{ userImage }}" class="md-card-image" alt="{{ userName }}"/>
 </div>
 <div class="cardTitleContainer">
     <span class="md-whiteframe-8dp cardTitle">{{ userName }}</span>
 </div>
 
+            <!-- <div>
+                <div ng-repeat="app in user.linked_apps">
+                    <span style="width: 150px; height: 50px"> </span>
+                </div>
+            </div> -->
+            
+           
+
+
+        <!-- <md-content>
+          <md-list flex layout="row">
+            <md-list-item ng-repeat="(key, app) in User.userInfo.linked_apps" class="userDetailCardSocial">
+              <a target="_blank" href="{{ app.url }}">
+                <md-icon md-svg-icon="{{ key }}"></md-icon>
+                <span class="md-list-item-text" class="md-offset">{{ app.name }}</span>
+              </a>  
+            </md-list-item>
+          </md-list>
+        </md-content> -->
+        <!-- <md-fab-actions ng-repeat="(key, app) in userSocial">
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini fabShadow">
+                    <md-icon md-svg-src="{{ key }}" aria-label="{{ key }}"></md-icon>
+                </md-button>
+        </md-fab-actions> -->
