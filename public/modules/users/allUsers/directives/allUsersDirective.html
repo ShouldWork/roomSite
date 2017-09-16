@@ -1,24 +1,23 @@
 
-
-<div class="md-whiteframe-8dp" style="height: 300px; overflow: hidden; margin-left: 15px; margin-right: 15px">
+<div class="md-whiteframe-8dp peepCard">
     <div class="lock-size" layout="row" layout-align="center center">
         <md-fab-speed-dial md-open="isOpen" md-direction="{{ selectedDirection }}" class="{{ selectedMode }} fabSpeedDial">
             <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-warn fabShadow" style="box-shadow: rgba(0,0,0,.7) 5px 8px 15px">
+                <md-button aria-label="menu" class="md-fab md-warn fabShadow socialButton">
                     <md-icon md-svg-src="contact"></md-icon>
                 </md-button>
             </md-fab-trigger>
 
             <md-fab-actions>
-                <md-button aria-label="Twitter" class="md-fab md-raised md-mini fabShadow">
+                <md-button aria-label="Twitter" class="md-fab fabShadow smallSocial md-mini">
                     <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
                 </md-button>
                 <!-- <a target="_blank" href="{{ userSocial.url }}"> -->
-                <md-button aria-label="Facebook" class="md-fab md-raised md-mini fabShadow">
+                <md-button aria-label="Facebook" class="md-fab fabShadow md-mini smallSocial">
                     <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
                 </md-button>
                 <!-- </a> -->
-                <md-button aria-label="LinkedIn" class="md-fab md-raised md-mini fabShadow">
+                <md-button aria-label="LinkedIn" class="md-fab fabShadow md-mini smallSocial">
                     <md-icon md-svg-src="linkedin" aria-label="LinkedIn"></md-icon>
                 </md-button>
             </md-fab-actions>

@@ -22,11 +22,11 @@ var materialApp = angular
     'recentPostsController',
     'postService'
 ]).config(function($mdThemingProvider, $mdIconProvider) {
-  $mdThemingProvider.theme('default')
-    .primaryPalette('blue-grey')
-    .accentPalette('indigo')
-    .dark();
-// $mdThemingProvider.disableTheming();
+//   $mdThemingProvider.theme('default')
+//     .primaryPalette('white')
+//     .accentPalette('indigo');
+    // .dark();
+$mdThemingProvider.disableTheming();
 
    $mdIconProvider
     .icon("dark", 'img/more_dark.svg')
@@ -41,5 +41,8 @@ var materialApp = angular
     .icon("left-arrow-black", 'img/left-arrow-black.svg')
     .icon("left-arrow-white", 'img/left-arrow-white.svg')
     .icon("phone", 'img/phone-call.svg')
-    .icon("house-outline", 'img/house-outline.svg');
+    .icon("house-outline", 'img/house-outline.svg')
+    .icon("email", 'img/email.svg')
+    .icon("cancel", 'img/cancel.svg')
+    .icon("search", 'img/search.svg');
 });

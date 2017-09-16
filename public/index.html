@@ -10,11 +10,11 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <link rel="stylesheet" href="styles/styles.css"/>
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,700' />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/scripts/angular-material/angular-material.min.css"/>
+  <link rel="stylesheet" href="styles/styles.css"/>
 
 
 </head>
@@ -24,43 +24,74 @@
 <div class="ng-cloak" layout="column" style="min-height:100%">
   <!-- Header -->
   <md-sidenav class="sideNavShow md-sidenav-left md-whiteframe-4dp ng-cloak" md-component-id="left" >
-    <div style="padding: 1em;">
-     <img src="/img/logo.png" alt="">
+    <div>
+        <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/home">
+            <span class="sideNavItem">Home</span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
+            <span class="sideNavItem">Peeps</span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/list">
+            <span class="sideNavItem">Objectives</span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item style="padding: 1em"  layout="row" ng-click="app.toggleLeft()" href="/tabs">
+            <span class="sideNavItem">Discussions</span>
+        </md-list-item>
     </div>
-    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/home">
-      <span class="sideNavItem">Home</span>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/peeps/allUsers">
-        <span class="sideNavItem">Peeps</span>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item style="padding: 1em" layout="row" ng-click="app.toggleLeft()" href="/list">
-        <span class="sideNavItem">Objectives</span>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item style="padding: 1em"  layout="row" ng-click="app.toggleLeft()" href="/tabs">
-        <span class="sideNavItem">Discussions</span>
-    </md-list-item>
+    <div></div>
+    <div style="float: right; padding: 1em;">
+        <img src="/img/logo.png" alt="UrDesign">
+    </div>
   </md-sidenav>
     <md-toolbar class="toolbar">
-        <div layout="row" layout-align="center center" layout-wrap class="md-toolbar-tools">
-
-            <md-button ng-click="app.toggleLeft()" class="md-icon-button" aria-label="Main Menu">
-              <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
-            </md-button>
-            <div flex>
-                <span ui-sref="home" class="logoMain">RoomSite</span> 
+        <div layout="row" layout-align="space-between center" layout-wrap class="md-toolbar-tools">
+            <div layout="row" layout-align="center center">
+                <md-button ng-click="app.toggleLeft()" class="md-icon-button" aria-label="Main Menu">
+                    <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
+                </md-button>
+                <div>
+                    <span ui-sref="home" class="logoMain" ng-show="!showSearch">RoomSite</span> 
+                </div>
             </div>
             <div>
-              <user-loggedin limit="50" short="false" user="userInfo.displayName"></user-loggedin>
+                <user-loggedin limit="50" short="false" user="userInfo.displayName"></user-loggedin>
             </div>  
-            <md-button ng-click="app.toggleRight()" class="md-icon-button" aria-label="User Menu">
-              <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
-            </md-button>
+            <div layout="row" layout-align="center center" ng-class="hide" class=""> 
+                <md-toolbar layout="row" layout-align="center center" class="doTransStuff md-hue-1">
+                        <div class="md-toolbar-tools">
+                            <md-button ng-click="hide='hideToolbarSearch'" aria-label="Back">
+                                <!-- <ng-md-icon icon="arrow_back"></ng-md-icon> -->
+                                <md-icon md-svg-src="cancel" aria-label="Cancel"></md-icon>  
+                            </md-button>
+                            <label>&nbsp;</label>
+                            <input ng-model="search.who" placeholder="enter search" id="toolbarSearch">
+                        </div>
+                </md-toolbar>
+                <!-- {{ hide }}
+                
+                <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
+                <input id="clearbtn" type="button" value="clear" ng-click="hide='hideToolbarSearch'">
+                <br>
+                <span class="base-class" ng-class="hide">Sample Text</span> -->
+
+                <div ng-mode="hide" >
+                    <md-button id="searchbtn" type="button" value="set" ng-click="hide='showToolbarSearch'">
+                        <md-icon md-svg-src="search" aria-label="Search"></md-icon>  
+                    </md-button>
+                    <!-- <md-button aria-label="Search" ng-click="hide='showToolbarSearch'">
+                        <md-icon md-svg-src="search" aria-label="Search"></md-icon>  
+                    </md-button> -->
+                </div>
+                <div ng-click="app.toggleRight()" class="md-icon-button" aria-label="User Menu">
+                    <md-icon md-font-icon="fa-user" class="md-menu-text-color fa s24"></md-icon>
+                </div>
+            </div>
         </div>
     </md-toolbar>
-    <md-sidenav class="md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right">
+    <md-sidenav class="sideNavShow md-sidenav-right md-whiteframe-4dp ng-cloak" md-component-id="right" style="backgound: gray">
         <md-toolbar class="md-toolbar-tools" layout="row" layout-align="space-between-center">
             <h3 class="md-toolbar-tools">Profile</h3>
             
@@ -87,7 +118,7 @@
   </md-sidenav>
     <!-- <div layout-fill style='background: red; min-height: 100px' flex="grow"></div> -->
 
-    <div ui-view flex="grow"></div>
+    <div ui-view flex="grow" style="background: linear-gradient(to bottom right, black, cadetblue);"></div>
     <footer>
         <div layout="row"  layout-align="center center">
             <h2>Killer footer info goes here</h2>

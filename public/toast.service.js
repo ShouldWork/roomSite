@@ -34,14 +34,12 @@ angular.module('toastService',[])
   }
 
   self.showSimpleToast = function(message) {
-    console.log("Showing toast!");
-    var pinTo = self.getToastPosition();
-
     $mdToast.show(
       $mdToast.simple()
-        .textContent(message)
-        .position(pinTo )
-        .hideDelay(3000)
+      .textContent(message.message)
+      .position(message.position)
+      .hideDelay(message.delay)
+      .toastClass(message.class)
     );
   };
 

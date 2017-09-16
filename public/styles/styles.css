@@ -23,13 +23,19 @@ md-tabs md-tabs-wrapper {
     padding: 0 12px;
 }
 .sideNavShow {
-    background: lightslategray;
+    /* background: cadetblue; */
+    background: linear-gradient(to bottom right, black, cadetblue); /* Standard syntax */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
 }
 .logoMain {
-    color: white; 
+    color: rgba(0,0,0,.7); 
     font-size: 1.5em;
     padding: .5em;
     cursor: pointer;
+    transition: all .5s linear;
 }
 .sideNavItem {
     color: white;
@@ -37,15 +43,23 @@ md-tabs md-tabs-wrapper {
     padding: .25em;
 }
 
+.smallSocial {
+    background: rgba(255, 255,255,0.78);    
+    position: relative;
+    /* background: rgba(0,0,0,.5); */
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.socialButton {
+    background: rgba(0,0,0,.75);
+    border: 3px solid white; 
+}
 
 .background_material {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.md-toast .md-toast-content span {
-    color: red;
 }
 
 a:link {
@@ -97,9 +111,13 @@ a:active {
 }
 
 .fabShadow {
-    box-shadow: rgba(0,0,0,.7) 5px 8px 15px;
+    box-shadow: rgba(0,0,0,.7) 5px 8px 15px !important;
+    transition: all .2s linear;
 }
 
+.fabShadow:hover{
+    box-shadow: rgba(0,0,0,.5) 10px 15px 25px !important;
+}
 .cardIcon_more {
     background-color: transparent;
     font-size: 2em;
@@ -150,11 +168,12 @@ a:active {
 .overlay_container {
     overflow: hidden;
     position: relative;
-    /*background: gray url('https://placeimg.com/640/800/tech/grayscale') no-repeat fixed center;*/
-    /*background: black;*/
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid black; */
 }
 
-.overlay {
+/* .overlay {
     position: absolute;
     background: linear-gradient(90deg,rgba(0,0,0,0.6),transparent);
     top: 0;
@@ -162,11 +181,17 @@ a:active {
     left: 0;
     right: 0;
     z-index: 0;
-}
+} */
 
 .img_affect {
-    filter: grayscale(55%) hue-rotate(33deg) ;
+    /* filter: grayscale(55%) hue-rotate(33deg); */
+    border: 7px solid transparent;
+    /* border-radius: 2em;  */
     /*filter: blur(3px);*/
+    transition: all .5s linear;
+}
+.img_affect:hover{
+    border: solid 7px rgba(65, 105, 225,0.5)
 }
 
 
@@ -218,8 +243,15 @@ a:active {
   color: red;
 }
 
+#searchInput{
+    border: 1px white solid;
+    border-radius: 2em;
+    /* background: rgba(0,0,0,.5); */
+    padding: 10px;
+}
+
 footer {
-  background-color: lightslategrey;
+  background-color: ghostwhite;
 }
 
 .smallFill{
@@ -242,42 +274,64 @@ footer {
     -ms-transition: all .25s linear;
     -o-transition: all .25s linear;
     transition: all .25s linear;
-    border: 1px solid;
-    margin: 1em; 
+    border: 1px solid white;
+    color: white;
 }
 .postBox:hover{
     box-shadow: 0 8px 8px -6px rgba(0,0,0,.2), 0 11px 13px 1px rgba(0,0,0,.14), 0 6px 17px 2px rgba(0,0,0,.12);
+    color: cadetblue;
 }
 .postBox p{
     font-style: italic;
     font-weight: 400;
-    color: white;
+    color: inherit
 }
 .postBox cite{
     align-self: flex-end;
-    color: white;
+    color: inherit;
 }
 .postBox h2{
     margin-bottom: 0;
-    color: white;
+    color: inherit;
 }
 
-.userBox{
+/* .userBox{
   cursor: pointer;
   position: relative;
   margin: .5em; 
 }
 .userBox img {
     min-width: 100%;
+} */
+
+.peepCard {
+    position: relative;
+    border-radius: 2.5em;
+    /* border: solid 7px rgba(65, 105, 225,0.5); */
+    border: solid 8px rgba(255,255,255,.8);
+    height: 300px;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all .25s ease-in; 
+}
+
+.peepCard:hover{
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.2), 5px 12px 15px 2px rgba(0,0,0,.14), 5px 8px 20px 4px rgba(0,0,0,.12);
 }
 
 .userDetailCard {
     max-width: 100%;
-    border: solid 2px cadetblue;
-    margin: .5em;
+    border-bottom: solid 2px cadetblue;
+    border-top: solid 2px cadetblue;
+    margin: 0px;
+    margin: 1em;
     padding: 1em;
     border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
     border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
 }
 .userDetailCardContact {
     border-radius: 25px;
@@ -325,3 +379,132 @@ footer {
   left: 0;
 }
 
+md-input-container label {
+    color: white;
+    font-size: 1em;
+}
+  
+  /* When the input is focused */
+md-input-container.md-input-focused label {
+    color: cadetblue;
+}
+
+#toolbarSearch {
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-left: 10px;
+    transition: all .2s linear;
+}
+.showToolbarSearch{
+    /* display: block; */
+    opacity: 1;
+    min-width: 10px; 
+    color: red;
+}
+.hideToolbarSearch{
+    transition: all .2s linear;
+    width: 0px;
+    display:none;
+    /* opacity: 0; */
+}
+
+.popupDialogue{
+    background: linear-gradient(to bottom right, rgba(0,0,0,.75), rgba(0,0,0,0.65));
+    font-size: 1.25em;
+    /* border-bottom: 8px solid black;  */
+    /* border-top: 5px solid black; */
+    padding: 1em; 
+    box-shadow: 0px 0px 30px 10px white;
+    color: ghostwhite;
+}
+.inputTitle {
+    width: 50%;
+    color: ghostwhite;
+    border-color: ghostwhite;
+    outline-color: ghostwhite;
+}
+.popupDialogue md-input-container textarea {
+    color: ghostwhite;
+    margin: 0px;
+    background: transparent;
+}
+.popupDialogue md-button {
+    color: ghostwhite; 
+    border: 1px solid white;
+}
+
+.dialogueButtonBox {
+    /* border-top: 3px solid ghostwhite; */
+    background: transparent; 
+    margin-top: 15px;
+}
+
+.dialogueButtonBox button {
+    color: ghostwhite;
+    background: transparent;
+    border: 1px solid ghostwhite;
+}
+
+
+.md-tab.md-active{
+    color: cadetblue;
+    border-bottom: 1em solid cadetblue;
+}
+.md-tab {
+    color: gray;
+}
+md-tabs md-tabs-wrapper {
+    background: white;
+}
+
+
+.ng-valid, .ng-not-empty, .ng-dirty, .ng-valid-parse, .ng-touched {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.base-class {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  }
+  
+  .base-class.my-class {
+    color: red;
+    font-size:3em;
+  }
+
+.md-pagination-wrapper {
+      margin-left: 10px;
+  }
+md-toast {
+    position: fixed;
+}
+md-toast.error .md-toast-content {
+    background: #f44336;
+    font-weight: 500;
+}
+md-toast.error .md-toast-content span {
+    color: white;
+}
+md-toast.success .md-toast-content {
+    background: rgba(0,0,0,.75);
+    font-weight: 500;
+}
+md-toast.success .md-toast-content span {
+    color: white;
+}
+md-toast.info .md-toast-content {
+    background: cadetblue;
+    font-weight: 600; 
+}
+md-toast.info .md-toast-content span{
+    color: white;
+}
+
+.greenFab{
+    background: lime;
+}
+.md-button.md-fab.md-fab-bottom-right {
+    position: fixed; 
+}

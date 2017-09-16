@@ -52,14 +52,22 @@ angular.module('appCtrl', ['ngMaterial'])
               emailAddress: answer.emailAddress
             }; 
             $scope.userInfo = loginService.userInfo;
-
-            console.log(loginService);
+            var toastMsg = {
+              message: 'Welcome to RoomSite, ' + answer.displayName + '!',
+              title: 'Welcome',
+              class: 'success',
+            }
+            toast.showSimpleToast(toastMsg);
             $mdSidenav('right').toggle();
-            toast.showSimpleToast('User is logged in ' + $scope.userInfo.displayName);
-            console.log($scope.userInfo.isLoggedIn)
+            console.log('showing toast: ' + toastMsg.message + "!" )
           }, function() {
+            var toastMsg = {
+              message: 'User creation cancelled!',
+              class: 'error',
+              title: 'Cancelled'
+            }
             $mdSidenav('right').toggle();
-            toast.showSimpleToast('No new user created!');
+            toast.showSimpleToast(toastMsg);
         });
       };
 
